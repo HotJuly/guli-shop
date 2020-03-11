@@ -103,6 +103,8 @@ export default {
 }
 </script>
 
-<style lang="stylus">
-
+<style lang="stylus" scoped>
+.like 
+  .Favourate 
+    border 1px solid #e4e4e4
 </style>

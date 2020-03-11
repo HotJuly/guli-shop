@@ -83,8 +83,9 @@ export default {
 }
 </script>
 
-<style lang="stylus">
+<style lang="stylus" scoped>
 #typeNav
+    border-bottom: 2px solid #e1251b;
     .sort 
         display block !important
         float left

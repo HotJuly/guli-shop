@@ -8,7 +8,7 @@ export default{
         const searchParam={...option};
         //删除对象中的空属性
         for (const key in searchParam) {
-            if (searchParam.hasOwnProperty(key)&&(typeof searchParam[key]==="string"&&searchParam[key].trim())) {
+            if (!searchParam.hasOwnProperty(key)||(typeof searchParam[key]==="string"&&!searchParam[key].trim())) {
                 delete searchParam[key]
             }
         }

@@ -102,16 +102,16 @@
                                 <div class="fl title">
                                     <div class="control-group">
                                         <div class="controls">
-                                            <input autocomplete="off" type="text" value="1" minnum="1" class="itxt" />
-                                            <a href="javascript:void(0)" class="increment plus">+</a>
-                                            <a href="javascript:void(0)" class="increment mins">-</a>
+                                            <input type="text" v-model="skuNum" class="itxt" />
+                                            <a href="javascript:void(0)" @click="skuNum++" class="increment plus">+</a>
+                                            <a href="javascript:void(0)" @click="skuNum<=1?skuNum=1:skuNum--" class="increment mins">-</a>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="fl">
                                     <ul class="btn-choose unstyled">
-                                        <li>
-                                            <a href="cart.html" target="_blank" class="sui-btn  btn-danger addshopcar">加入购物车</a>
+                                        <li @click="addToCart">
+                                            <a href="javascript:void(0)" class="sui-btn btn-danger addshopcar">加入购物车</a>
                                         </li>
                                     </ul>
                                 </div>
@@ -688,7 +688,8 @@ export default {
                 buytype: ['官方标配', '移动优惠版','电信优惠版'],
                 other:['保护套装','充电套装']
 
-            }
+            },
+            skuNum:1
         }
     },
     computed:{
@@ -703,6 +704,10 @@ export default {
         this.$store.dispatch('getDetailInfo',this.skuId)
     },
     methods:{
+        addToCart(){
+            const {skuId,skuNum}=this;
+            this.$store.dispatch('addToCart',{skuId,skuNum,cb:()=>this.$router.push('/addcartsuccess')});
+        }
     },
     components:{
         TypeNav,
@@ -711,7 +716,7 @@ export default {
 }
 </script>
 
-<style lang="stylus">
+<style lang="stylus" scoped>
 a 
   color #666
 .btn-danger 

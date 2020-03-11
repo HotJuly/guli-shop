@@ -249,7 +249,7 @@ export default {
 }
 </script>
 
-<style lang="stylus">
+<style lang="stylus" scoped>
 .tabbox 
   font-family "微软雅黑"
   .tab 

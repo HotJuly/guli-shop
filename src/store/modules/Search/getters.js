@@ -4,5 +4,8 @@ export default{
     },
     attrsList(state){
         return state.list.attrsList||[];
+    },
+    goodsList(state){
+        return state.list.goodsList||[];
     }
 }

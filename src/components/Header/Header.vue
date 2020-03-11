@@ -8,9 +8,9 @@
                         <ul class="fl">
                             <li class="f-item">尚品汇欢迎您！</li>
                             <li class="f-item">请
-                                <a href="login.html" target="_blank">登录</a>
+                                <router-link to="/login">登录</router-link>
                                 <span>
-                                    <a href="register.html" target="_blank">免费注册</a>
+                                    <router-link to="/login">免费注册</router-link>
                                 </span>
                             </li>
                         </ul>
@@ -92,12 +92,10 @@ export default {
             keyword:""
         }
     },
-    props:["setKeyWord"],
     methods:{
         handleClick(){
-            if(this.setKeyWord){
-                this.setKeyWord();
-                return;
+            if(this.$route.path.includes('/search')){
+                this.$bus.$emit('setKeyWord',this.keyword)
             }else{
                 this.$router.push({path:"/search",query:{keyword:this.keyword}})
             }
@@ -106,6 +104,6 @@ export default {
 }
 </script>
 
-<style lang="stylus">
+<style lang="stylus" scoped>
 
 </style>

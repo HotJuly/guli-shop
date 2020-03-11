@@ -414,10 +414,7 @@ em
   border 0
   border-radius 0
   background #585757
-.py-container 
-  .title 
-    overflow hidden
-    margin-top 15px
+
 .title 
   .tip 
     background-image url(./img/icons.png)
@@ -425,9 +422,7 @@ em
     height 25px
     background-position 182px -104px
     line-height 30px
-.like 
-  .Favourate 
-    border 1px solid #e4e4e4
+
   ul 
     li 
       img 
@@ -446,52 +441,7 @@ em
     color #df3033
   p 
     margin-bottom 0
-.blockgary 
-  background #f7f7f7
-.floors 
-  h3 
-    color #c81623
-  .fr 
-    ul 
-      li 
-        margin-left 0
-        a 
-          padding 0
-          &:after 
-            content "|"
-            padding 0 10px
-        &:last-child 
-          a 
-            &:after 
-              content ""
-    .sui-nav 
-      margin 10px 0 0
-      display inline-block
-  .sui-nav 
-    &.nav-tabs 
-      border-bottom 0
-      & > .active 
-        & > a 
-          font-weight 400
-          color #e1251b
-          border 0
-          padding-top 1px
-.floor 
-  .floor-content 
-    border-top 2px solid #c81623
-    border-bottom 1px solid #e4e4e4
-ul 
-  &.jd-list 
-    padding 15px 0
-    overflow hidden
-    li 
-      list-style-type none
-      float left
-      width 40%
-      margin 0 10px
-      border-bottom 1px solid #e4e4e4
-      text-align center
-      line-height 26px
+
   &.brand-list 
     li 
       height 48px
