@@ -122,22 +122,27 @@ export default {
           showClose:false
         })
         .then(() => {
-          alert('支付成功,你很棒棒哦\n查询中,请稍等几秒钟~~~')
+          alert('那你很棒棒哦,正在查询支付信息,请稍等几秒钟~~~')
         })
         .catch(() => {
           alert('请联系尚硅谷漂亮的前台')
         });
         if(!this.timer){
+          let index=0;
           this.timer=setInterval(() => {
             this.queryPayStatus()
             .then(message=>{
               if(message==="已支付"){
+                clearInterval(this.timer);
                 alert('支付成功,点击确定将跳转购物车~~~')
                 this.$router.replace('/shopcart');
               }
             })
             .catch(error=>{
-              alert('支付未成功,请确认微信付款情况')
+              if(index===0){
+                alert('支付未成功,请确认微信付款情况');
+                index=1;
+              }
             })
           }, 3000);
         }

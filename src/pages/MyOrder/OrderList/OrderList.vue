@@ -26,48 +26,7 @@
                     </div>
                     <div id="all" class="tab-pane active">
                         <div class="orders">
-                            <table class="sui-table table-bordered" v-for="order in orderInfo.records" :key="order.id">
-                                <thead>
-                                <tr>
-                                    <th colspan="5">
-                                        <span class="ordertitle">{{order.createTime}}　订单编号：{{order.outTradeNo}} <span class="pull-right delete"><img src="./img/delete.png"/></span></span>
-                                    </th>
-                                </tr>
-                                </thead>
-                                <tbody>
-                                <tr v-for="(good,index) in order.orderDetailList" :key="good.id">
-                                    <td>
-                                        <div class="typographic"><img :src="good.imgUrl" />
-                                            <a href="#" class="block-text">{{good.skuName}}</a><span>x{{good.skuNum}}</span>
-                                            <ul class="unstyled list-inline">
-                                                <li>申请售后</li>
-                                            </ul>
-                                        </div>
-                                    </td>
-                                    <template v-if="index===0">
-                                        <td rowspan="2" width="8%" class="center">{{order.consignee}}</td>
-                                        <td rowspan="2" width="13%" class="center">
-                                            <ul class="unstyled">
-                                                <li>总金额¥{{order.totalAmount}}</li>
-                                                <li>{{order.paymentWay==="ONLINE"?"在线付款":"货到付款"}}</li>
-
-                                            </ul>
-                                        </td>
-                                        <td rowspan="2" width="8%" class="center">
-                                            <a href="#" class="btn">{{order.orderStatusName}}</a>
-                                        </td>
-                                        <td rowspan="2" width="13%" class="center">
-                                            <ul class="unstyled">
-                                                <li>
-                                                    <a href="mycomment.html" target="_blank">评价|晒单</a>
-                                                </li>
-
-                                            </ul>
-                                        </td>
-                                    </template>
-                                </tr>
-                                </tbody>
-                            </table>
+                            <OrderCard :order="order" :orderInfo="orderInfo"  v-for="order in orderInfo.records" :key="order.id"/>
                         </div>
                         <el-pagination
                             @size-change="handleSizeChange"
@@ -198,25 +157,47 @@
 </template>
 
 <script>
+import {mapState} from 'vuex'
 import {Pagination} from 'element-ui'
+import OrderCard from './OrderCard/OrderCard'
 export default {
     name:"OrderList",
-    props:{
-        handleSizeChange:Function.Required,
-        handleCurrentChange:Function.Required,
-        orderInfo:Object.Required
+    data(){
+        return {
+            page:1,
+            limit:2
+        }
+    },
+    mounted(){
+        this.getOrderInfo()
+    },
+    computed:{
+        ...mapState({
+            orderInfo:state=>state.MyOrder.orderInfo
+        })
+    },
+    methods:{
+        handleSizeChange(limit){
+            this.limit=limit;
+            this.getOrderInfo();
+        },
+        handleCurrentChange(page){
+            this.page=page;
+            this.getOrderInfo();
+        },
+        getOrderInfo(){
+            const {page,limit}=this;
+            this.$store.dispatch('getOrderInfo',{page,limit});
+        }
     },
     components:{
-        [Pagination.name]:Pagination
+        [Pagination.name]:Pagination,
+        OrderCard
     }
 }
 </script>
 
 <style lang="stylus" scoped>
-.typographic
-    img
-        width 82px
-        height 82px
 .body 
   color #666
   .ever 

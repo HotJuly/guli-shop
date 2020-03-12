@@ -5,46 +5,17 @@
                 <!--左侧列表-->
                 <Aside />
                 <!--右侧主内容-->
-                <OrderList :orderInfo="orderInfo" :handleSizeChange="handleSizeChange" :handleCurrentChange="handleCurrentChange" />
+                <OrderList />
             </div>
         </div>
     </div>
 </template>
 
 <script>
-import {mapState} from 'vuex'
 import Aside from './Aside/Aside'
 import OrderList from './OrderList/OrderList'
 export default {
     name:"MyOrder",
-    data(){
-        return {
-            page:1,
-            limit:2
-        }
-    },
-    mounted(){
-        this.getOrderInfo()
-    },
-    computed:{
-        ...mapState({
-            orderInfo:state=>state.MyOrder.orderInfo
-        })
-    },
-    methods:{
-        handleSizeChange(limit){
-            this.limit=limit;
-            this.getOrderInfo();
-        },
-        handleCurrentChange(page){
-            this.page=page;
-            this.getOrderInfo();
-        },
-        getOrderInfo(){
-            const {page,limit}=this;
-            this.$store.dispatch('getOrderInfo',{page,limit});
-        }
-    },
     components:{
         Aside,
         OrderList

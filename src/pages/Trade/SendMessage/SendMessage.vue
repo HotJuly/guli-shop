@@ -19,7 +19,7 @@
                                 <span><img :src="goodDetail.imgUrl"/></span>
                             </li>
                             <li class="yui3-u-7-12">
-                                <div class="desc">Apple iPhone 6s (A1700) 64G 玫瑰金色 移动联通电信4G手机硅胶透明防摔软壳 本色系列</div>
+                                <div class="desc">{{goodDetail.skuName}}</div>
                                 <div class="seven">7天无理由退货</div>
                             </li>
                             <li class="yui3-u-1-12">
