@@ -2,11 +2,11 @@
     <div id="typeNav">
         <div class="py-container">
             <div class="yui3-g NavList">
-                <div class="all-sorts-list">
+                <div class="all-sorts-list" @mouseenter="isShow=true" @mouseleave="checkShow">
                     <div class="yui3-u Left all-sort">
                         <h4>全部商品分类</h4>
                     </div>
-                    <div class="sort" @mouseleave="currentIndex=-1;"  v-if="isShow&&baseCategoryList.length">
+                    <div class="sort"  v-show="isShow&&baseCategoryList.length">
                         <div class="all-sort-list2">
                             <div class="item" @mouseenter="hover(index)" v-for="(item,index) in baseCategoryList" :key="item.categoryId">
                                 <h3>
@@ -64,11 +64,8 @@ export default {
     },
     mounted(){
         //通过showList文件控制侧边导航栏是否显示
-        const isShow=showList.includes(this.$route.path);
-        this.isShow=isShow;
-        if(isShow){
-            this.$store.dispatch('getBaseCategoryList')
-        }
+        this.isShow=showList.includes(this.$route.path);
+        this.$store.dispatch('getBaseCategoryList')
     },
     computed:{
         ...mapState({
@@ -78,6 +75,12 @@ export default {
     methods:{
         hover(index){
             this.currentIndex=index;
+        },
+        checkShow(){
+            this.currentIndex=-1;
+            if(!showList.includes(this.$route.path)){
+                this.isShow=false
+            }
         }
     }
 }
@@ -87,7 +90,7 @@ export default {
 #typeNav
     border-bottom: 2px solid #e1251b;
     .sort 
-        display block !important
+        display block
         float left
         .item-list
             display block

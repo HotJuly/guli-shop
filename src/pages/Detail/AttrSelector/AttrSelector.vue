@@ -5,8 +5,8 @@
                 <i>{{spuSaleAttr.saleAttrName}}</i>
             </div>
         </dt>
-        <dd v-for="spuSaleAttrValue in spuSaleAttr.spuSaleAttrValueList" :key="spuSaleAttrValue.saleAttrName+spuSaleAttrValue.id">
-            <a href="javascript:;">{{spuSaleAttrValue.saleAttrValueName}}</a>
+        <dd v-for="(spuSaleAttrValue,index) in spuSaleAttr.spuSaleAttrValueList" :key="spuSaleAttrValue.saleAttrName+spuSaleAttrValue.id">
+            <a :class="saleAttr[spuSaleAttrValue.baseSaleAttrId]===index?'selected':''" @click="checkSelected(spuSaleAttrValue.baseSaleAttrId,index)" href="javascript:;">{{spuSaleAttrValue.saleAttrValueName}}</a>
         </dd>
     </dl>
 </template>
@@ -14,8 +14,22 @@
 <script>
 export default {
     name:"AttrSelector",
+    data(){
+      return {
+        saleAttr:{
+          "1":0,
+          "2":0,
+          "3":0,
+        }
+      }
+    },
     props:{
         spuSaleAttr:Object.Required
+    },
+    methods:{
+      checkSelected(id,index){
+        this.saleAttr[id]=index;
+      }
     }
 }
 </script>
