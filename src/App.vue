@@ -14,6 +14,13 @@ export default {
   components:{
     Header,
     Footer
+  },
+  mounted(){
+    let userInfo=window.localStorage.getItem('token');
+    if(userInfo){
+      userInfo=JSON.parse(userInfo);
+      this.$store.dispatch('autoLogin',userInfo)
+    }
   }
 }
 </script>

@@ -7,7 +7,8 @@
                     <div class="shortcut">
                         <ul class="fl">
                             <li class="f-item">尚品汇欢迎您！</li>
-                            <li class="f-item">请
+                            <li class="f-item logout" v-if="userInfo.nickName" @click="logout">{{userInfo.nickName}}</li>
+                            <li class="f-item" v-else>请
                                 <router-link to="/login">登录</router-link>
                                 <span>
                                     <router-link to="/login">免费注册</router-link>
@@ -17,12 +18,14 @@
                         <div class="fr typelist">
                             <ul class="types">
                                 <li class="f-item">
-                                    <span>我的订单</span>
+                                    <span>
+                                        <router-link to="/myorder">我的订单</router-link>
+                                    </span>
                                 </li>
 
                                 <li class="f-item">
                                     <span>
-                                        <a href="cart.html" target="_blank">我的购物车</a>
+                                        <router-link to="/shopcart">我的购物车</router-link>
                                     </span>
                                 </li>
                                 <li class="f-item">
@@ -85,6 +88,7 @@
 </template>
 
 <script>
+import {mapState} from 'vuex'
 export default {
     name:"Header",
     data(){
@@ -99,11 +103,20 @@ export default {
             }else{
                 this.$router.push({path:"/search",query:{keyword:this.keyword}})
             }
+        },
+        logout(){
+            this.$store.dispatch('userLogout');
         }
+    },
+    computed:{
+        ...mapState({
+            userInfo:state=>state.Login.userInfo
+        })
     }
 }
 </script>
 
 <style lang="stylus" scoped>
-
+.logout
+    cursor pointer
 </style>

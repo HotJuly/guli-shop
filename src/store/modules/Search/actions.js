@@ -12,7 +12,7 @@ export default{
                 delete searchParam[key]
             }
         }
-        const result=await reqList({searchParam});
+        const result=await reqList(searchParam);
         if(result.code===200){
             commit(RECEIVELIST,result.data)
         }

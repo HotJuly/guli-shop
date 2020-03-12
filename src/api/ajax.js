@@ -7,9 +7,9 @@ const ajax=axios.create({
 
 
 ajax.interceptors.request.use((config)=>{
-    const token=window.localStorage.getItem('token');
-    if(token){
-        config.headers['token']=token;
+    const userInfo=window.localStorage.getItem('token');
+    if(userInfo){
+        config.headers['token']=JSON.parse(userInfo).token;
     }
     return config
 },(error)=>{

@@ -5,15 +5,15 @@
                 <h3><i class="sui-icon icon-pc-right"></i>商品已成功加入购物车！</h3>
                 <div class="goods">
                     <div class="left-good">
-                        <div class="left-pic"><img src="./img/_/gocart.jpg"></div>
+                        <div class="left-pic"><img :src="good.skuDefaultImg"></div>
                         <div class="right-info">
-                            <p class="title">美的（Midea)电饭煲WFZ5099IH IH电磁加热 1250W大火力 钛金釜5L电饭锅</p>
-                            <p class="attr">颜色：WFZ5099IH/5L钛金釜内胆 数量：1</p>
+                            <p class="title">{{good.skuName}}</p>
+                            <p class="attr">颜色：WFZ5099IH/5L钛金釜内胆 数量：{{skuNum}}</p>
                         </div>
                     </div>
                     <div class="right-gocart">
-                        <a href="#" class="sui-btn btn-xlarge">查看商品详情</a>
-                        <a href="cart.html" class="sui-btn btn-xlarge btn-danger " target="_blank">去购物车结算 > </a>
+                        <a href="javascript:;" class="sui-btn btn-xlarge" @click="$router.replace({path:'/detail',query:{skuId,skuNum}})">查看商品详情</a>
+                        <router-link to="/shopcart">去购物车结算 > </router-link>
                     </div>
                 </div>
             </div>
@@ -559,7 +559,17 @@
 
 <script>
 export default {
-    
+    name:"AddCartSuccess",
+    data(){
+        return {
+            good:{}
+        }
+    },
+    props:['skuId','skuNum'],
+    mounted(){
+        let good=window.sessionStorage.getItem('addGood');
+        this.good=JSON.parse(good);
+    }
 }
 </script>
 

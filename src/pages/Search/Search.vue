@@ -45,11 +45,13 @@
                     </div>
                     <GoodList :goodsList="goodsList" />
                     <el-pagination
+                        @size-change="handleSizeChange"
                         @current-change="handleCurrentChange"
                         :current-page.sync="currentPage"
-                        :page-size="10"
-                        layout="prev, pager, next, jumper"
-                        :total="goodsList.length">
+                        :page-sizes="[2, 10, 20, 50]"
+                        :page-size="list.pageSize"
+                        layout="total, sizes, prev, pager, next, jumper"
+                        :total="list.total">
                     </el-pagination>
                     <!-- <div class="fr page">
                         <div class="sui-pagination pagination-large">
@@ -172,7 +174,7 @@
 
 <script>
 import {Pagination} from 'element-ui'
-import {mapGetters} from 'vuex'
+import {mapGetters,mapState} from 'vuex'
 import TypeNav from '../../components/TypeNav/TypeNav'
 import SearchSelector from './SearchSelector/SearchSelector'
 import GoodList from './GoodList/GoodList'
@@ -181,13 +183,17 @@ export default {
     data(){
         return {
             option:{
-                order:"1:desc"
+                order:"1:desc",
+                props:[],
+                pageNo:1,
+                pageSize:2
             },
             currentPage:1
         }
     },
     mounted(){
-        this.option={...this.$route.query,props:[],order:"1:desc"};
+        // this.option={...this.$route.query,props:[],order:"1:desc"};
+        this.option={...this.$route.query,...this.option};
         //设置事件总线,防止在Search页面再次点击搜索按钮无效
         this.$bus.$on('setKeyWord',this.setKeyWord)
         this.getList();
@@ -196,7 +202,11 @@ export default {
         category(){
             return this.option.categoryName||this.option.keyword;
         },
-        ...mapGetters(["goodsList"])
+        ...mapGetters(["goodsList"]),
+        ...mapState({
+            list:state=>state.Search.list
+        })
+
     },
     methods:{
         getList(){
@@ -258,7 +268,12 @@ export default {
             this.getList();
         },
         handleCurrentChange(currentPage){
-            this.currentPage=currentPage;
+            this.option.pageNo=currentPage;
+            this.getList();
+        },
+        handleSizeChange(pageSize){
+            this.option.pageSize=pageSize;
+            this.getList();
         }
     },
     components:{

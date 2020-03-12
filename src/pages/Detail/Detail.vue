@@ -694,10 +694,6 @@ export default {
     },
     computed:{
         ...mapGetters(['skuImageList','skuInfo','spuSaleAttrList']),
-        // ...mapState({
-        //     skuInfo:state=>state.Detail.skuInfo,
-        //     spuSaleAttrList:state=>state.Detail.spuSaleAttrList,
-        // }),
         skuId(){return this.$route.query.skuId}
     },
     mounted(){
@@ -706,7 +702,8 @@ export default {
     methods:{
         addToCart(){
             const {skuId,skuNum}=this;
-            this.$store.dispatch('addToCart',{skuId,skuNum,cb:()=>this.$router.push('/addcartsuccess')});
+            window.sessionStorage.setItem('addGood',JSON.stringify(this.skuInfo));
+            this.$store.dispatch('addToCart',{skuId,skuNum,cb:()=>this.$router.push({path:"/addcartsuccess",query:{skuId,skuNum}})});
         }
     },
     components:{
