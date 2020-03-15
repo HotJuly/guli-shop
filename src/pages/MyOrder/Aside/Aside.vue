@@ -53,21 +53,25 @@ export default {
 }
 </script>
 
-<style lang="stylus" scoped>
-.list 
-  dl 
-    margin 0
-  dt 
-    font-weight 700
-    padding 5px
-    i 
-      color #77b72c
-  dd 
-    margin 0 0 6px
-    border-bottom 1px solid #ededed
-    text-align center
+<style scoped>
+.list dl {
+  margin: 0;
+}
+.list dt {
+  font-weight: 700;
+  padding: 5px;
+}
+.list dt i {
+  color: #77b72c;
+}
+.list dd {
+  margin: 0 0 6px;
+  border-bottom: 1px solid #ededed;
+  text-align: center;
+}
 .list dt,
-dd 
-  line-height 28px
+dd {
+  line-height: 28px;
+}
 
 </style>

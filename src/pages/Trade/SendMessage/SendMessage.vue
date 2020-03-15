@@ -56,61 +56,72 @@ export default {
 }
 </script>
 
-<style lang="stylus" scoped>
-.step-cont 
-  margin 0 10px 0 20px
-  ul
-    &.send-detail 
-        li 
-            margin-top 10px
-            line-height 30px
-    li 
-      list-style-type none
-      overflow hidden
-  .con 
-    float left
-    padding 0
-    margin 5px 0
-  li 
-    &.selected 
-      border 1px solid #e1251b
-      span 
-        width 13px
-        height 13px
-        display none
-        position absolute
-        right 0
-        _right -1px
-        bottom 0
-        _bottom -1px
-        overflow hidden
-        background url(./img/choosed.png) no-repeat
-        display block
-.sendType 
-  background #f4f4f4
-  margin-bottom 2px
-  .express 
-    border 1px solid #ddd
-    width 120px
-    text-align center
-    margin-right 10px
+<style scoped>
+.step-cont {
+  margin: 0 10px 0 20px;
+}
+.step-cont ul.send-detail li {
+  margin-top: 10px;
+  line-height: 30px;
+}
+.step-cont ul li {
+  list-style-type: none;
+  overflow: hidden;
+}
+.step-cont .con {
+  float: left;
+  padding: 0;
+  margin: 5px 0;
+}
+.step-cont li.selected {
+  border: 1px solid #e1251b;
+}
+.step-cont li.selected span {
+  width: 13px;
+  height: 13px;
+  display: none;
+  position: absolute;
+  right: 0;
+  _right: -1px;
+  bottom: 0;
+  _bottom: -1px;
+  overflow: hidden;
+  background: url("./img/choosed.png") no-repeat;
+  display: block;
+}
+.sendType {
+  background: #f4f4f4;
+  margin-bottom: 2px;
+}
+.sendType .express {
+  border: 1px solid #ddd;
+  width: 120px;
+  text-align: center;
+  margin-right: 10px;
+}
 .sendType,
-.sendGoods 
-  padding 15px
-.sendGoods 
-  background #feedef
-.buyMessage 
-  span 
-    display block
-  .remarks-cont 
-    width 99%
-    border-color #e4e2e2
-    line-height 1.8
-.seven 
-  color #c81623
-  margin-top 20px
-.price 
-  font 14px "微软雅黑"
-  font-weight 700
-  color #e12228
+.sendGoods {
+  padding: 15px;
+}
+.sendGoods {
+  background: #feedef;
+}
+.buyMessage span {
+  display: block;
+}
+.buyMessage .remarks-cont {
+  width: 99%;
+  border-color: #e4e2e2;
+  line-height: 1.8;
+}
+.seven {
+  color: #c81623;
+  margin-top: 20px;
+}
+.price {
+  font: 14px "微软雅黑";
+  font-weight: 700;
+  color: #e12228;
+}
+
 </style>

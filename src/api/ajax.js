@@ -2,7 +2,7 @@ import axios from 'axios'
 
 const ajax=axios.create({
     baseURL:"/api",
-    timeout:5000
+    timeout:50000
 })
 
 

@@ -255,318 +255,374 @@ export default {
 }
 </script>
 
-<style lang="stylus" scoped>
-.row-405 
-  width 404px
-.row-225 
-  width 225px
-.row-165 
-  width 165px
-.row-330 
-  width 330px
-.row-220 
-  width 220px
-.row-218 
-  width 218px
-  &.split 
-    border 1px solid #e4e4e4
-    width 218px
-    border-bottom 0
-    border-top 0
-a 
-  color #666
-  &.carousel-control 
-    *font-size 30px
-    *padding-left 3px
-img 
-  -webkit-backface-visibility hidden
-  -webkit-transition opacity 0.3s ease-out
-  -moz-transition opacity 0.3s ease-out
-  -o-transition opacity 0.3s ease-out
-  transition opacity 0.3s ease-out
-  &:hover 
-    opacity 0.8
-.typeNav 
-  border-bottom 2px solid #e1251b
-.Recommend 
-  height 165px
-  background-color #eaeaea
-  margin 10px 0
-.Interest 
-  height 405px
-  border 1px solid #ededed
-  margin -2px
-  position relative
-  .Interest-conver-split 
-    overflow hidden
-    border-right 1px solid #e4e4e4
-    h5 
-      text-align center
-      border-bottom 1px dotted #e4e4e4
-      padding 5px
-      font-weight 700
-      color #000
-  .x-line 
-    height 1px
-    background #e4e4e4
-    display block
-    top 250px
-    left 405px
-    position absolute
-    width 630px
-    z-index 9999
-.Floor-1 
-  height 360px
-em 
-  font-style normal
-.banerArea 
-  .sui-carousel 
-    padding 5px
-    margin-bottom 0
-.news 
-  border 1px solid #e4e4e4
-  margin-top 5px
-  position relative
-  z-index 3
-  h4 
-    border-bottom 1px solid #e4e4e4
-    padding 5px 10px
-    margin 5px 5px 0
-    line-height 22px
-    overflow hidden
-  ul 
-    &.news-list 
-      padding 5px 15px
-    li 
-      line-height 26px
-.Lifeservice 
-  border-right 1px solid #e4e4e4
-  overflow hidden
-  position relative
-  z-index 2
-  overflow hidden
-  .life-item 
-    .list-item 
-      background-image url(./img/icons.png)
-      width 61px
-      height 40px
-      display block
-      position relative
-      *zoom 1
-      _position relative
-.SortList 
-  margin-left 210px
-  ul 
-    &.Lifeservice 
-      & > li 
-        border-left 1px solid #e4e4e4
-        border-bottom 1px solid #e4e4e4
-        margin-right -1px
-        height 64px
-        text-align center
-        position relative
-        cursor pointer
-.service-intro 
-  line-height 22px
-  width 60px
-  display block
-.list-item-1 
-  background-position 2px -5px
-.list-item-2 
-  background-position -60px -5px
-.list-item-3 
-  background-position -124px -5px
-.list-item-4 
-  background-position -188px -5px
-.list-item-5 
-  background-position 2px -76px
-.list-item-6 
-  background-position -60px -76px
-.list-item-7 
-  background-position -124px -76px
-.list-item-8 
-  background-position -188px -76px
-.list-item-9 
-  background-position 2px -146px
-.list-item-10 
-  background-position -60px -146px
-.list-item-11 
-  background-position -126px -142px
-.list-item-12 
-  background-position -191px -142px
-.Right 
-  .ads 
-    margin-top 5px
+<style scoped>
+.row-405 {
+  width: 404px;
+}
+.row-225 {
+  width: 225px;
+}
+.row-165 {
+  width: 165px;
+}
+.row-330 {
+  width: 330px;
+}
+.row-220 {
+  width: 220px;
+}
+.row-218 {
+  width: 218px;
+}
+.row-218.split {
+  border: 1px solid #e4e4e4;
+  width: 218px;
+  border-bottom: 0;
+  border-top: 0;
+}
+a {
+  color: #666;
+}
+a.carousel-control {
+  *font-size: 30px;
+  *padding-left: 3px;
+}
+img {
+  -webkit-backface-visibility: hidden;
+  -webkit-transition: opacity 0.3s ease-out;
+  -moz-transition: opacity 0.3s ease-out;
+  -o-transition: opacity 0.3s ease-out;
+  transition: opacity 0.3s ease-out;
+}
+img:hover {
+  opacity: 0.8;
+}
+.typeNav {
+  border-bottom: 2px solid #e1251b;
+}
+.Recommend {
+  height: 165px;
+  background-color: #eaeaea;
+  margin: 10px 0;
+}
+.Interest {
+  height: 405px;
+  border: 1px solid #ededed;
+  margin: -2px;
+  position: relative;
+}
+.Interest .Interest-conver-split {
+  overflow: hidden;
+  border-right: 1px solid #e4e4e4;
+}
+.Interest .Interest-conver-split h5 {
+  text-align: center;
+  border-bottom: 1px dotted #e4e4e4;
+  padding: 5px;
+  font-weight: 700;
+  color: #000;
+}
+.Interest .x-line {
+  height: 1px;
+  background: #e4e4e4;
+  display: block;
+  top: 250px;
+  left: 405px;
+  position: absolute;
+  width: 630px;
+  z-index: 9999;
+}
+.Floor-1 {
+  height: 360px;
+}
+em {
+  font-style: normal;
+}
+.banerArea .sui-carousel {
+  padding: 5px;
+  margin-bottom: 0;
+}
+.news {
+  border: 1px solid #e4e4e4;
+  margin-top: 5px;
+  position: relative;
+  z-index: 3;
+}
+.news h4 {
+  border-bottom: 1px solid #e4e4e4;
+  padding: 5px 10px;
+  margin: 5px 5px 0;
+  line-height: 22px;
+  overflow: hidden;
+}
+.news ul.news-list {
+  padding: 5px 15px;
+}
+.news ul li {
+  line-height: 26px;
+}
+.Lifeservice {
+  border-right: 1px solid #e4e4e4;
+  overflow: hidden;
+  position: relative;
+  z-index: 2;
+  overflow: hidden;
+}
+.Lifeservice .life-item .list-item {
+  background-image: url("./img/icons.png");
+  width: 61px;
+  height: 40px;
+  display: block;
+  position: relative;
+  *zoom: 1;
+  _position: relative;
+}
+.SortList {
+  margin-left: 210px;
+}
+.SortList ul.Lifeservice > li {
+  border-left: 1px solid #e4e4e4;
+  border-bottom: 1px solid #e4e4e4;
+  margin-right: -1px;
+  height: 64px;
+  text-align: center;
+  position: relative;
+  cursor: pointer;
+}
+.service-intro {
+  line-height: 22px;
+  width: 60px;
+  display: block;
+}
+.list-item-1 {
+  background-position: 2px -5px;
+}
+.list-item-2 {
+  background-position: -60px -5px;
+}
+.list-item-3 {
+  background-position: -124px -5px;
+}
+.list-item-4 {
+  background-position: -188px -5px;
+}
+.list-item-5 {
+  background-position: 2px -76px;
+}
+.list-item-6 {
+  background-position: -60px -76px;
+}
+.list-item-7 {
+  background-position: -124px -76px;
+}
+.list-item-8 {
+  background-position: -188px -76px;
+}
+.list-item-9 {
+  background-position: 2px -146px;
+}
+.list-item-10 {
+  background-position: -60px -146px;
+}
+.list-item-11 {
+  background-position: -126px -142px;
+}
+.list-item-12 {
+  background-position: -191px -142px;
+}
+.Right .ads {
+  margin-top: 5px;
+}
 .sui-nav.nav-tabs > .active > a,
-.sui-nav.nav-tabs > li > a:hover 
-  color #77b72c
-.clock 
-  background-color #5c5251
-  color #fff
-  font-size 18px
-  text-align center
-  .time 
-    padding 30px 0
-  h3 
-    font-size 18px
-.carousel-control 
-  width 17px
-  border 0
-  border-radius 0
-  background #585757
-
-.title 
-  .tip 
-    background-image url(./img/icons.png)
-    width 66px
-    height 25px
-    background-position 182px -104px
-    line-height 30px
-
-  ul 
-    li 
-      img 
-        width 142px
-        height 142px
-        padding 0
-      .like-text 
-        padding 0
-        width 142px
-        border-right 1px solid #e4e4e4
-      &:last-child 
-        .like-text 
-          border-right 0
-.like-text 
-  h3 
-    color #df3033
-  p 
-    margin-bottom 0
-
-  &.brand-list 
-    li 
-      height 48px
-      line-height 58px
-.brandArea 
-  position relative
-  .brand-yline 
-    height 405px
-    width 1px
-    position absolute
-    left 80px
-    border-left 1px dashed #e4e4e4
-  ul 
-    li 
-      height 57px
-      border-bottom 1px dashed #e4e4e4
-      img 
-        padding 11px 0
-      &:nth-last-child(2) 
-        border-bottom 0
-      &:last-child 
-        border-bottom 0
-.split 
-  position relative
-  .floor-x-line 
-    position absolute
-    background #e4e4e4
-    width 220px
-    height 1px
-    top 180px
-.brand 
-  .Brand-list 
-    overflow hidden
-    padding 15px 0
-    margin 10px 0
-  ul 
-    li 
-      img 
-        border-left 1px dotted #ccc
-        padding 0 10px
-      &:first-child 
-        img 
-          border-left 0
-#floor-index 
-  position fixed
-  left 280px
-  top 120px
-  display none
-  a 
-    text-decoration none
-  ul 
-    li 
-      list-style-type none
-      text-decoration none
-      width 60px
-      height 30px
-      line-height 30px
-      text-align center
-      border-bottom 1px solid #ddd
-      &:last-child 
-        border-bottom 1px solid #ddd
-      .num 
-        color #666
-        background #f7f7f7
-      .word 
-        display none
-        background #90cb1c
-        color #fff
-.tab-item 
-  cursor pointer
-  position relative
-  top 0
-.life-item-content 
-  width 246px
-  height 164px
-  top 218px
-  padding-left 1px
-  border-left 1px solid #e4e4e4
-  overflow hidden
-  position absolute
-  z-index 2
-.life-detail 
-  display none
-  background #fff
-  height 159px
-  padding 0 4px
-.lifenow 
-  display block
-.close 
-  cursor pointer
-  float right
-  color #ea4a36
-#picLBxxl 
-  li 
-    height 250px
-.picLB 
-  overflow hidden
-  zoom 1
-  padding 0 10px
-  li 
-    height 250px
-    margin 0 -1px
-    overflow hidden
-    background #fff
-    position relative
-    float left
-    display inline
-.picDl 
-  width 1200px
-  overflow hidden
-  zoom 1
-  height 250px
-  position absolute
-  top 0
-  left 0
-  margin 0
-  dd 
-    float left
-    display inline
-    overflow hidden
-
-.item-list 
-  .subitem 
-    dl 
-      &.fore 
-        border-top 0
+.sui-nav.nav-tabs > li > a:hover {
+  color: #77b72c;
+}
+.clock {
+  background-color: #5c5251;
+  color: #fff;
+  font-size: 18px;
+  text-align: center;
+}
+.clock .time {
+  padding: 30px 0;
+}
+.clock h3 {
+  font-size: 18px;
+}
+.carousel-control {
+  width: 17px;
+  border: 0;
+  border-radius: 0;
+  background: #585757;
+}
+.title .tip {
+  background-image: url("./img/icons.png");
+  width: 66px;
+  height: 25px;
+  background-position: 182px -104px;
+  line-height: 30px;
+}
+.title ul li img {
+  width: 142px;
+  height: 142px;
+  padding: 0;
+}
+.title ul li .like-text {
+  padding: 0;
+  width: 142px;
+  border-right: 1px solid #e4e4e4;
+}
+.title ul li:last-child .like-text {
+  border-right: 0;
+}
+.like-text h3 {
+  color: #df3033;
+}
+.like-text p {
+  margin-bottom: 0;
+}
+.like-text.brand-list li {
+  height: 48px;
+  line-height: 58px;
+}
+.brandArea {
+  position: relative;
+}
+.brandArea .brand-yline {
+  height: 405px;
+  width: 1px;
+  position: absolute;
+  left: 80px;
+  border-left: 1px dashed #e4e4e4;
+}
+.brandArea ul li {
+  height: 57px;
+  border-bottom: 1px dashed #e4e4e4;
+}
+.brandArea ul li img {
+  padding: 11px 0;
+}
+.brandArea ul li:nth-last-child(2) {
+  border-bottom: 0;
+}
+.brandArea ul li:last-child {
+  border-bottom: 0;
+}
+.split {
+  position: relative;
+}
+.split .floor-x-line {
+  position: absolute;
+  background: #e4e4e4;
+  width: 220px;
+  height: 1px;
+  top: 180px;
+}
+.brand .Brand-list {
+  overflow: hidden;
+  padding: 15px 0;
+  margin: 10px 0;
+}
+.brand ul li img {
+  border-left: 1px dotted #ccc;
+  padding: 0 10px;
+}
+.brand ul li:first-child img {
+  border-left: 0;
+}
+#floor-index {
+  position: fixed;
+  left: 280px;
+  top: 120px;
+  display: none;
+}
+#floor-index a {
+  text-decoration: none;
+}
+#floor-index ul li {
+  list-style-type: none;
+  text-decoration: none;
+  width: 60px;
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+  border-bottom: 1px solid #ddd;
+}
+#floor-index ul li:last-child {
+  border-bottom: 1px solid #ddd;
+}
+#floor-index ul li .num {
+  color: #666;
+  background: #f7f7f7;
+}
+#floor-index ul li .word {
+  display: none;
+  background: #90cb1c;
+  color: #fff;
+}
+.tab-item {
+  cursor: pointer;
+  position: relative;
+  top: 0;
+}
+.life-item-content {
+  width: 246px;
+  height: 164px;
+  top: 218px;
+  padding-left: 1px;
+  border-left: 1px solid #e4e4e4;
+  overflow: hidden;
+  position: absolute;
+  z-index: 2;
+}
+.life-detail {
+  display: none;
+  background: #fff;
+  height: 159px;
+  padding: 0 4px;
+}
+.lifenow {
+  display: block;
+}
+.close {
+  cursor: pointer;
+  float: right;
+  color: #ea4a36;
+}
+#picLBxxl li {
+  height: 250px;
+}
+.picLB {
+  overflow: hidden;
+  zoom: 1;
+  padding: 0 10px;
+}
+.picLB li {
+  height: 250px;
+  margin: 0 -1px;
+  overflow: hidden;
+  background: #fff;
+  position: relative;
+  float: left;
+  display: inline;
+}
+.picDl {
+  width: 1200px;
+  overflow: hidden;
+  zoom: 1;
+  height: 250px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: 0;
+}
+.picDl dd {
+  float: left;
+  display: inline;
+  overflow: hidden;
+}
+.item-list .subitem dl.fore {
+  border-top: 0;
+}
 
 </style>

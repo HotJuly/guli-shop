@@ -8,19 +8,19 @@
                     </div>
                     <div class="sort"  v-show="isShow&&baseCategoryList.length">
                         <div class="all-sort-list2">
-                            <div class="item" @mouseenter="hover(index)" v-for="(item,index) in baseCategoryList" :key="item.categoryId">
+                            <div class="item" @mouseenter="hover(index)" @click="toSearch" v-for="(item,index) in baseCategoryList" :key="item.categoryId">
                                 <h3>
-                                    <router-link :to="{path:'/search',query:{category1Id:item.categoryId,categoryName:item.categoryName}}">{{item.categoryName}}</router-link>
+                                    <a href="javascript:;" :data-categoryName="item.categoryName" :data-category1Id="item.categoryId">{{item.categoryName}}</a>
                                 </h3>
                                 <div class="item-list clearfix" v-show="index===currentIndex">
                                     <div class="subitem">
                                         <dl class="fore" v-for="category in item.categoryChild" :key="`${item.categoryId}+${category.categoryId}`">
                                             <dt>
-                                                <router-link :to="{path:'/search',query:{category2Id:category.categoryId,categoryName:category.categoryName}}">{{category.categoryName}}</router-link>
+                                                <a href="javascript:;" :data-categoryName="category.categoryName" :data-category2Id="category.categoryId">{{category.categoryName}}</a>
                                             </dt>
                                             <dd>
                                                 <em v-for="categoryItem in category.categoryChild" :key="`${item.categoryId}+${category.categoryId}+${categoryItem.categoryId}`">
-                                                    <router-link :to="{path:'/search',query:{category3Id:categoryItem.categoryId,categoryName:categoryItem.categoryName}}">{{categoryItem.categoryName}}</router-link>
+                                                    <a href="javascript:;" :data-categoryName="categoryItem.categoryName" :data-category3Id="categoryItem.categoryId">{{categoryItem.categoryName}}</a>
                                                 </em>
                                             </dd>
                                         </dl>
@@ -81,17 +81,35 @@ export default {
             if(!showList.includes(this.$route.path)){
                 this.isShow=false
             }
+        },
+        toSearch(event){
+            const {dataset:{categoryname,category1id,category2id,category3id}}=event.target;
+            if(categoryname){
+                let query;
+                if(category1id){
+                    query={category1Id:category1id}
+                }else if(category2id){
+                    query={category2Id:category2id}
+                }else if(category3id){
+                    query={category3Id:category3id}
+                }
+                query.categoryName=categoryname;
+                this.$router.push({path:"/search",query:{category3Id:category3id,categoryName:categoryname}});
+            }
         }
     }
 }
 </script>
 
-<style lang="stylus" scoped>
-#typeNav
-    border-bottom: 2px solid #e1251b;
-    .sort 
-        display block
-        float left
-        .item-list
-            display block
+<style scoped>
+#typeNav {
+  border-bottom: 2px solid #e1251b;
+}
+#typeNav .sort {
+  display: block;
+  float: left;
+}
+#typeNav .sort .item-list {
+  display: block;
+}
 </style>

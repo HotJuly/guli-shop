@@ -116,7 +116,8 @@ export default {
 }
 </script>
 
-<style lang="stylus" scoped>
-.logout
-    cursor pointer
+<style scoped>
+.logout {
+  cursor: pointer;
+}
 </style>

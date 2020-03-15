@@ -22,16 +22,46 @@
                     <div class="fl preview-wrap">
                         <!--放大镜效果-->
                         <div class="zoom">
+                            <div class="swiper-container spec-preview gallery-top">
+                                <div class="swiper-wrapper">
+                                <div class="swiper-slide" style="background-image:url(./images/nature-1.jpg)"></div>
+                                <div class="swiper-slide" style="background-image:url(./images/nature-2.jpg)"></div>
+                                <div class="swiper-slide" style="background-image:url(./images/nature-3.jpg)"></div>
+                                <div class="swiper-slide" style="background-image:url(./images/nature-4.jpg)"></div>
+                                <div class="swiper-slide" style="background-image:url(./images/nature-5.jpg)"></div>
+                                <div class="swiper-slide" style="background-image:url(./images/nature-6.jpg)"></div>
+                                <div class="swiper-slide" style="background-image:url(./images/nature-7.jpg)"></div>
+                                <div class="swiper-slide" style="background-image:url(./images/nature-8.jpg)"></div>
+                                <div class="swiper-slide" style="background-image:url(./images/nature-9.jpg)"></div>
+                                <div class="swiper-slide" style="background-image:url(./images/nature-10.jpg)"></div>
+                                </div>
+                                <!-- Add Arrows -->
+                                <div class="swiper-button-next swiper-button-white"></div>
+                                <div class="swiper-button-prev swiper-button-white"></div>
+                            </div>
+                            <div class="swiper-container spec-scroll gallery-thumbs">
+                                <div class="swiper-wrapper">
+                                <div class="swiper-slide items" style="background-image:url(./images/nature-1.jpg)"></div>
+                                <div class="swiper-slide items" style="background-image:url(./images/nature-2.jpg)"></div>
+                                <div class="swiper-slide items" style="background-image:url(./images/nature-3.jpg)"></div>
+                                <div class="swiper-slide items" style="background-image:url(./images/nature-4.jpg)"></div>
+                                <div class="swiper-slide items" style="background-image:url(./images/nature-5.jpg)"></div>
+                                <div class="swiper-slide items" style="background-image:url(./images/nature-6.jpg)"></div>
+                                <div class="swiper-slide items" style="background-image:url(./images/nature-7.jpg)"></div>
+                                <div class="swiper-slide items" style="background-image:url(./images/nature-8.jpg)"></div>
+                                <div class="swiper-slide items" style="background-image:url(./images/nature-9.jpg)"></div>
+                                <div class="swiper-slide items" style="background-image:url(./images/nature-10.jpg)"></div>
+                                </div>
+                            </div>
                             <!--默认第一个预览-->
-                            <div id="preview" class="spec-preview">
+                            <!-- <div id="preview" class="spec-preview">
                                 <span class="jqzoom">
                                     <img jqimg="./img/_/b1.png" :src="skuInfo.skuDefaultImg" />
                                 </span>
-                            </div>
+                            </div> -->
                             <!--下方的缩略图-->
-                            <div class="spec-scroll">
+                            <!-- <div class="spec-scroll">
                                 <a class="prev">&lt;</a>
-                                <!--左右按钮-->
                                 <div class="items">
                                     <ul>
                                         <li v-for="skuImage in skuImageList" :key="skuImage.id">
@@ -40,7 +70,7 @@
                                     </ul>
                                 </div>
                                 <a class="next">&gt;</a>
-                            </div>
+                            </div> -->
                         </div>
                     </div>
                     <div class="fr itemInfo-wrap" id="app">
@@ -672,6 +702,8 @@
 
 <script>
 import {mapState,mapGetters} from 'vuex'
+import Swiper from 'swiper'
+import 'swiper/css/swiper.min.css'
 import TypeNav from '../../components/TypeNav/TypeNav'
 import AttrSelector from './AttrSelector/AttrSelector'
 export default {
@@ -697,7 +729,24 @@ export default {
         skuId(){return this.$route.query.skuId}
     },
     mounted(){
-        this.$store.dispatch('getDetailInfo',this.skuId)
+        this.$store.dispatch('getDetailInfo',this.skuId);
+        var galleryThumbs = new Swiper('.gallery-thumbs', {
+      spaceBetween: 10,
+      slidesPerView: 4,
+      freeMode: true,
+      watchSlidesVisibility: true,
+      watchSlidesProgress: true,
+    });
+    var galleryTop = new Swiper('.gallery-top', {
+      spaceBetween: 10,
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+      thumbs: {
+        swiper: galleryThumbs
+      }
+    });
     },
     methods:{
         addToCart(){
@@ -713,513 +762,611 @@ export default {
 }
 </script>
 
-<style lang="stylus" scoped>
-a 
-  color #666
-.btn-danger 
-  border-radius 0
-  background-color #e1251b
-  border 1px solid #e1251b
+<style scoped>
+a {
+  color: #666;
+}
+.btn-danger {
+  border-radius: 0;
+  background-color: #e1251b;
+  border: 1px solid #e1251b;
+}
 .btn-danger:hover,
 .btn-danger:focus .btn-danger:active,
-.btn-danger.active 
-  border 1px solid #e1251b
-  background-color #e1251b
-.typeNav 
-  border-bottom 2px solid #e1251b
-#item 
-  margin 15px 0
-  font-family "微软雅黑"
-.preview-wrap 
-  width 400px
-.itemInfo-wrap 
-  width 700px
-  font-family "宋体"
-.aside 
-  width 210px
-.detail 
-  width 980px
-em 
-  font-style normal
-.sui-breadcrumb 
-  padding 9px 15px 0 0
-  margin 0 0 9px
-.product-info 
-  overflow hidden
-  margin 5px 0 15px
-.summary-wrap 
-  overflow hidden
-  line-height 28px
-  margin-top 10px
-  .price 
-    color #c81623
-    em 
-      font-size 24px
-      font-weight 700
-    i 
-      font-size 16px
-    span 
-      font-size 12px
-  dl 
-    overflow hidden
-    a 
-      color #666
-      line-height 24px
-      padding 2px 14px
-      margin-right 5px
-      display block
-      float left
-      position relative
-      outline 0
-      border-top 1px solid #eee
-      border-right 1px solid #bbb
-      border-bottom 1px solid #bbb
-      border-left 1px solid #eee
-      background-color #fff
-      text-decoration none
-  .selected 
-    border 1px solid #77b72c
-    span 
-      display block
-  .locked 
-    color #d6d6d6
-    cursor not-allowed
-    border-color #bbb
-    border-style dotted
-  a 
-    span 
-      width 13px
-      height 13px
-      display none
-      position absolute
-      right 0
-      _right -1px
-      bottom 0
-      _bottom -1px
-      overflow hidden
-      background url(./img/choosed.png) no-repeat
-.product-detail 
-  margin 30px 0
-.red-bg 
-  background #b61d1d
-  padding 3px
-  color #fff
-  background #c81623
-  color #fff
-  padding 3px
-.sku-name 
-  h4 
-    font-weight 700
-.news 
-  color #e12228
-.summary 
-  background #fee9eb
-  padding 7px
-  margin 13px 0
-.support 
-  border-bottom 1px solid #ededed
-  padding-bottom 5px
-.title 
-  margin-right 15px
-.controls 
-  width 48px
-  position relative
-  a 
-    text-decoration none
-  .itxt 
-    display block
-    width 38px
-    height 34px
-    line-height 42px
-    border 1px solid #ddd
-    text-align center
-    color #555
-    float left
-    border-right 0
-  .plus 
-    display block
-    width 15px
-    text-align center
-    height 17px
-    line-height 17px
-    overflow hidden
-    background #f1f1f1
-    color #666
-    position absolute
-    right -8px
-    border 1px solid #ccc
-  .mins 
-    display block
-    width 15px
-    text-align center
-    height 17px
-    line-height 17px
-    overflow hidden
-    background #f1f1f1
-    color #666
-    position absolute
-    right -8px
-    border 1px solid #ccc
-    top 19px
-    border-top 0
-.fix-width 
-  width 520px
-.t-gray 
-  color #999
-ul 
-  &.btn-choose 
-    li 
-      float left
-      margin 0 10px 0 0
-      .btn-xlarge 
-        font-size 12px
-        border-radius 0
-        .addshopcar 
-          font-size 16px
-  &.part-list 
-    overflow hidden
-    li 
-      line-height 18px
-      width 50%
-      float left
-      border-bottom 1px dashed #ededed
-      line-height 28px
-  &.goods-list 
-    li 
-      margin 5px 0 15px
-      border-bottom 1px solid #ededed
-      padding-bottom 5px
-  &.goods-intro 
-    li 
-      line-height 26px
-.addshopcar 
-  padding 10px 25px
-  background #77b72c
-  font-size 16px
-  font-family "微软雅黑"
-.sui-btn:active,.sui-btn.active 
-  background-color #e1251b
-  color #fff
-.sui-nav 
-  &.nav-tabs 
-    &.tab-wraped 
-      & > li 
-        width 50%
-        & > a 
-          padding 11px
-          text-align center
-        &.active 
-          & > a 
-            padding-top 9px
-            border-top 3px solid #e1251b
-.intro 
-  .sui-nav 
-    &.nav-tabs 
-      &.tab-wraped 
-        background #ededed
-        & > li 
-          width auto
-          &.active 
-            & > a 
-              font-weight 400
-              border 0
-              padding-top 12px
-              background #e1251b
-              color #fff
-  .tab-content 
-    &.tab-wraped 
-      border 0
-.tab-content 
-  &.tab-wraped 
-    padding 10px
-.summary-price-wrap 
-  overflow hidden
-.goods-list 
-  .operate 
-    margin 5px 40px
-.p-img 
-  img 
-    padding-left 20px
-.suits 
-  .list-wrap 
-    float left
-    margin 0 10px
-  ul 
-    li 
-      float left
-      list-style-type none
-      padding 0 20px
-.good-suits 
-  overflow hidden
+.btn-danger.active {
+  border: 1px solid #e1251b;
+  background-color: #e1251b;
+}
+.typeNav {
+  border-bottom: 2px solid #e1251b;
+}
+#item {
+  margin: 15px 0;
+  font-family: "微软雅黑";
+}
+.preview-wrap {
+  width: 400px;
+}
+.itemInfo-wrap {
+  width: 700px;
+  font-family: "宋体";
+}
+.aside {
+  width: 210px;
+}
+.detail {
+  width: 980px;
+}
+em {
+  font-style: normal;
+}
+.sui-breadcrumb {
+  padding: 9px 15px 0 0;
+  margin: 0 0 9px;
+}
+.product-info {
+  overflow: hidden;
+  margin: 5px 0 15px;
+}
+.summary-wrap {
+  overflow: hidden;
+  line-height: 28px;
+  margin-top: 10px;
+}
+.summary-wrap .price {
+  color: #c81623;
+}
+.summary-wrap .price em {
+  font-size: 24px;
+  font-weight: 700;
+}
+.summary-wrap .price i {
+  font-size: 16px;
+}
+.summary-wrap .price span {
+  font-size: 12px;
+}
+.summary-wrap dl {
+  overflow: hidden;
+}
+.summary-wrap dl a {
+  color: #666;
+  line-height: 24px;
+  padding: 2px 14px;
+  margin-right: 5px;
+  display: block;
+  float: left;
+  position: relative;
+  outline: 0;
+  border-top: 1px solid #eee;
+  border-right: 1px solid #bbb;
+  border-bottom: 1px solid #bbb;
+  border-left: 1px solid #eee;
+  background-color: #fff;
+  text-decoration: none;
+}
+.summary-wrap .selected {
+  border: 1px solid #77b72c;
+}
+.summary-wrap .selected span {
+  display: block;
+}
+.summary-wrap .locked {
+  color: #d6d6d6;
+  cursor: not-allowed;
+  border-color: #bbb;
+  border-style: dotted;
+}
+.summary-wrap a span {
+  width: 13px;
+  height: 13px;
+  display: none;
+  position: absolute;
+  right: 0;
+  _right: -1px;
+  bottom: 0;
+  _bottom: -1px;
+  overflow: hidden;
+  background: url("./img/choosed.png") no-repeat;
+}
+.product-detail {
+  margin: 30px 0;
+}
+.red-bg {
+  background: #b61d1d;
+  padding: 3px;
+  color: #fff;
+  background: #c81623;
+  color: #fff;
+  padding: 3px;
+}
+.sku-name h4 {
+  font-weight: 700;
+}
+.news {
+  color: #e12228;
+}
+.summary {
+  background: #fee9eb;
+  padding: 7px;
+  margin: 13px 0;
+}
+.support {
+  border-bottom: 1px solid #ededed;
+  padding-bottom: 5px;
+}
+.title {
+  margin-right: 15px;
+}
+.controls {
+  width: 48px;
+  position: relative;
+}
+.controls a {
+  text-decoration: none;
+}
+.controls .itxt {
+  display: block;
+  width: 38px;
+  height: 34px;
+  line-height: 42px;
+  border: 1px solid #ddd;
+  text-align: center;
+  color: #555;
+  float: left;
+  border-right: 0;
+}
+.controls .plus {
+  display: block;
+  width: 15px;
+  text-align: center;
+  height: 17px;
+  line-height: 17px;
+  overflow: hidden;
+  background: #f1f1f1;
+  color: #666;
+  position: absolute;
+  right: -8px;
+  border: 1px solid #ccc;
+}
+.controls .mins {
+  display: block;
+  width: 15px;
+  text-align: center;
+  height: 17px;
+  line-height: 17px;
+  overflow: hidden;
+  background: #f1f1f1;
+  color: #666;
+  position: absolute;
+  right: -8px;
+  border: 1px solid #ccc;
+  top: 19px;
+  border-top: 0;
+}
+.fix-width {
+  width: 520px;
+}
+.t-gray {
+  color: #999;
+}
+ul.btn-choose li {
+  float: left;
+  margin: 0 10px 0 0;
+}
+ul.btn-choose li .btn-xlarge {
+  font-size: 12px;
+  border-radius: 0;
+}
+ul.btn-choose li .btn-xlarge .addshopcar {
+  font-size: 16px;
+}
+ul.part-list {
+  overflow: hidden;
+}
+ul.part-list li {
+  line-height: 18px;
+  width: 50%;
+  float: left;
+  border-bottom: 1px dashed #ededed;
+  line-height: 28px;
+}
+ul.goods-list li {
+  margin: 5px 0 15px;
+  border-bottom: 1px solid #ededed;
+  padding-bottom: 5px;
+}
+ul.goods-intro li {
+  line-height: 26px;
+}
+.addshopcar {
+  padding: 10px 25px;
+  background: #77b72c;
+  font-size: 16px;
+  font-family: "微软雅黑";
+}
+.sui-btn:active,
+.sui-btn.active {
+  background-color: #e1251b;
+  color: #fff;
+}
+.sui-nav.nav-tabs.tab-wraped > li {
+  width: 50%;
+}
+.sui-nav.nav-tabs.tab-wraped > li > a {
+  padding: 11px;
+  text-align: center;
+}
+.sui-nav.nav-tabs.tab-wraped > li.active > a {
+  padding-top: 9px;
+  border-top: 3px solid #e1251b;
+}
+.intro .sui-nav.nav-tabs.tab-wraped {
+  background: #ededed;
+}
+.intro .sui-nav.nav-tabs.tab-wraped > li {
+  width: auto;
+}
+.intro .sui-nav.nav-tabs.tab-wraped > li.active > a {
+  font-weight: 400;
+  border: 0;
+  padding-top: 12px;
+  background: #e1251b;
+  color: #fff;
+}
+.intro .tab-content.tab-wraped {
+  border: 0;
+}
+.tab-content.tab-wraped {
+  padding: 10px;
+}
+.summary-price-wrap {
+  overflow: hidden;
+}
+.goods-list .operate {
+  margin: 5px 40px;
+}
+.p-img img {
+  padding-left: 20px;
+}
+.suits .list-wrap {
+  float: left;
+  margin: 0 10px;
+}
+.suits ul li {
+  float: left;
+  list-style-type: none;
+  padding: 0 20px;
+}
+.good-suits {
+  overflow: hidden;
+}
 .master,
 .suits,
-.result 
-  height 140px
-  padding 10px
-.master 
-  .list-wrap 
-    position relative
-    text-align center
-    i 
-      position absolute
-      top 48px
-      right -25px
-      font-size 16px
-    em 
-      color #c81623
-      font-size 16px
-      font-weight 700
-.result 
-  line-height 26px
-  border-left 1px solid #ddd
-  padding 20px
-  .price 
-    color #b1191a
-    font-size 16px
+.result {
+  height: 140px;
+  padding: 10px;
+}
+.master .list-wrap {
+  position: relative;
+  text-align: center;
+}
+.master .list-wrap i {
+  position: absolute;
+  top: 48px;
+  right: -25px;
+  font-size: 16px;
+}
+.master .list-wrap em {
+  color: #c81623;
+  font-size: 16px;
+  font-weight: 700;
+}
+.result {
+  line-height: 26px;
+  border-left: 1px solid #ddd;
+  padding: 20px;
+}
+.result .price {
+  color: #b1191a;
+  font-size: 16px;
+}
 .fitting,
-.like 
-  border 1px solid #ddd
-  margin-bottom 15px
-.kt 
-  border-bottom 1px solid #ddd
-  background #f1f1f1
-  color #333
-  margin 0
-  padding 5px 0 5px 15px
-.like 
-  .like-list 
-    padding 15px
+.like {
+  border: 1px solid #ddd;
+  margin-bottom: 15px;
+}
+.kt {
+  border-bottom: 1px solid #ddd;
+  background: #f1f1f1;
+  color: #333;
+  margin: 0;
+  padding: 5px 0 5px 15px;
+}
+.like .like-list {
+  padding: 15px;
+}
 .like-list ul li .attr,
 .like-list ul li .price,
-.like-list ul li .commit 
-  padding-left 15px
-  font-family "微软雅黑"
-.list-wrap 
-  .price 
-    font-size 16px
-    color #c81623
-.like-list 
-  ul 
-    li 
-      .price 
-        margin-bottom 20px
-      .list-wrap 
-        line-height 22px
-.comment 
-  p 
-    margin-bottom 0
-    margin-top 0
-  .com-tit 
-    padding 0 10px
-    line-height 32px
-    font-size 14px
-    background-color #f7f7f7
-    border 1px solid #eee
-    font-weight 700
-  .com-percent 
-    text-align center
-    line-height 45px
-    p 
-      margin-bottom 0
-    .percent 
-      font-size 30px
-      color #ff0909
-  .com-tab-type 
-    line-height 36px
-    .type 
-      padding-left 20px
-      list-style none
-      background-color #f7f7f7
-      li 
-        display inline-block
-        margin-right 15px
-        cursor pointer
-        a 
-          text-decoration none
-          color #555
-        &.current 
-          a 
-            color #ff0909
-    .content 
-      .com-item 
-        padding 15px
-        line-height 26px
-        border-bottom 1px solid #ddd
-.com-item 
-  .user-column 
-    float left
-    width 140px
-    .username 
-      img 
-        width 25px
-        height 25px
-        border-radius 12px
-        margin-right 2px
-    .usernum 
-      color #999
-  .user-info 
-    margin-left 150px
-    .stars 
-      width 78px
-      height 18px
-      background url(./img/_/star.png) no-repeat
-      &.star4 
-        background-position 0 0
-    .mini 
-      list-style none
-      float left
-      li 
-        display inline-block
-    .guige 
-      color #999
-      .reply 
-        color #ff0909
-        margin 10px
-        border-top 1px solid #dddddd
-        padding-top 15px
-        font-size 14px
-        .name 
-          padding-right 20px
-        .time 
-          color #999
-    .operate 
-      float right
-      span 
-        padding-right 15px
-        cursor pointer
-        i 
-          font-size 16px
-i 
-  &.icon-tb-likefill 
-    color #c81623
-  &.icon-tb-wangfill 
-    color #c81623
-.tab 
-  overflow hidden
-  border-bottom 2px solid #be0000
-  margin-bottom 10px
-  li 
-    position relative
-    height 24px
-    padding 3px 12px 0
-    overflow hidden
-    margin-right 3px
-    line-height 24px
-    font-size 14px
-    font-weight 700
-    color #c30
-  span 
-    position absolute
-    left 0
-    top 0
-    z-index 1
-    width 10px
-    height 27px
-  a 
-    float none
-    color #c30
-  .curr 
-    background-position right -178px
-    color #fff
-    span 
-      background-position 0 -178px
-    a 
-      color #fff
-.tab li,.tab a,.tab-item 
-  cursor pointer
-  float left
-  text-align center
-.m,.mt,.mc,.mb 
-  overflow hidden
-.mt 
-  .extra 
-    float right
-.zoom 
-  img 
-    max-width none
-.jqzoom 
-  float left
-  border 0
-  position relative
-  padding 5px
-  cursor pointer
-  margin 0
-  display block
-.zoomdiv 
-  z-index 100
-  position absolute
-  top 0
-  left 0
-  width 350px
-  height 350px
-  background #fff
-  border 1px solid #ccc
-  display none
-  text-align center
-  overflow hidden
-.jqZoomPup 
-  z-index 10
-  visibility hidden
-  position absolute
-  top 0
-  left 0
-  width 20px
-  height 20px
-  border 1px solid #aaa
-  background #fff
-  opacity .5
-.spec-preview 
-  width 410px
-  height 410px
-  border 1px solid #dfdfdf
-.spec-scroll 
-  clear both
-  margin-top 5px
-  width 410px
-  overflow hidden
-  .prev 
-    float left
-    margin-right 4px
-  .next 
-    float right
-  .items 
-    float left
-    position relative
-    width 380px
-    height 56px
-    overflow hidden
-    ul 
-      position absolute
-      width 9999px
-      height 56px
-      margin 0
-      padding 0
-      li 
-        float left
-        width 75px
-        text-align center
-        margin 0
-        padding 0
-        list-style-type none
-        img 
-          border 1px solid #ccc
-          padding 2px
-          width 50px
-          height 50px
-          display block
-          &:hover 
-            border 2px solid #f60
-            padding 1px
-.spec-scroll .prev,.spec-scroll .next 
-  display block
-  font-family "宋体"
-  text-align center
-  width 10px
-  height 54px
-  line-height 54px
-  border 1px solid #ccc
-  background #ebebeb
-  cursor pointer
-  text-decoration none
+.like-list ul li .commit {
+  padding-left: 15px;
+  font-family: "微软雅黑";
+}
+.list-wrap .price {
+  font-size: 16px;
+  color: #c81623;
+}
+.like-list ul li .price {
+  margin-bottom: 20px;
+}
+.like-list ul li .list-wrap {
+  line-height: 22px;
+}
+.comment p {
+  margin-bottom: 0;
+  margin-top: 0;
+}
+.comment .com-tit {
+  padding: 0 10px;
+  line-height: 32px;
+  font-size: 14px;
+  background-color: #f7f7f7;
+  border: 1px solid #eee;
+  font-weight: 700;
+}
+.comment .com-percent {
+  text-align: center;
+  line-height: 45px;
+}
+.comment .com-percent p {
+  margin-bottom: 0;
+}
+.comment .com-percent .percent {
+  font-size: 30px;
+  color: #ff0909;
+}
+.comment .com-tab-type {
+  line-height: 36px;
+}
+.comment .com-tab-type .type {
+  padding-left: 20px;
+  list-style: none;
+  background-color: #f7f7f7;
+}
+.comment .com-tab-type .type li {
+  display: inline-block;
+  margin-right: 15px;
+  cursor: pointer;
+}
+.comment .com-tab-type .type li a {
+  text-decoration: none;
+  color: #555;
+}
+.comment .com-tab-type .type li.current a {
+  color: #ff0909;
+}
+.comment .com-tab-type .content .com-item {
+  padding: 15px;
+  line-height: 26px;
+  border-bottom: 1px solid #ddd;
+}
+.com-item .user-column {
+  float: left;
+  width: 140px;
+}
+.com-item .user-column .username img {
+  width: 25px;
+  height: 25px;
+  border-radius: 12px;
+  margin-right: 2px;
+}
+.com-item .user-column .usernum {
+  color: #999;
+}
+.com-item .user-info {
+  margin-left: 150px;
+}
+.com-item .user-info .stars {
+  width: 78px;
+  height: 18px;
+  background: url("./img/_/star.png") no-repeat;
+}
+.com-item .user-info .stars.star4 {
+  background-position: 0 0;
+}
+.com-item .user-info .mini {
+  list-style: none;
+  float: left;
+}
+.com-item .user-info .mini li {
+  display: inline-block;
+}
+.com-item .user-info .guige {
+  color: #999;
+}
+.com-item .user-info .guige .reply {
+  color: #ff0909;
+  margin: 10px;
+  border-top: 1px solid #ddd;
+  padding-top: 15px;
+  font-size: 14px;
+}
+.com-item .user-info .guige .reply .name {
+  padding-right: 20px;
+}
+.com-item .user-info .guige .reply .time {
+  color: #999;
+}
+.com-item .user-info .operate {
+  float: right;
+}
+.com-item .user-info .operate span {
+  padding-right: 15px;
+  cursor: pointer;
+}
+.com-item .user-info .operate span i {
+  font-size: 16px;
+}
+i.icon-tb-likefill {
+  color: #c81623;
+}
+i.icon-tb-wangfill {
+  color: #c81623;
+}
+.tab {
+  overflow: hidden;
+  border-bottom: 2px solid #be0000;
+  margin-bottom: 10px;
+}
+.tab li {
+  position: relative;
+  height: 24px;
+  padding: 3px 12px 0;
+  overflow: hidden;
+  margin-right: 3px;
+  line-height: 24px;
+  font-size: 14px;
+  font-weight: 700;
+  color: #c30;
+}
+.tab span {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 1;
+  width: 10px;
+  height: 27px;
+}
+.tab a {
+  float: none;
+  color: #c30;
+}
+.tab .curr {
+  background-position: right -178px;
+  color: #fff;
+}
+.tab .curr span {
+  background-position: 0 -178px;
+}
+.tab .curr a {
+  color: #fff;
+}
+.tab li,
+.tab a,
+.tab-item {
+  cursor: pointer;
+  float: left;
+  text-align: center;
+}
+.m,
+.mt,
+.mc,
+.mb {
+  overflow: hidden;
+}
+.mt .extra {
+  float: right;
+}
+.zoom img {
+  max-width: none;
+}
+.jqzoom {
+  float: left;
+  border: 0;
+  position: relative;
+  padding: 5px;
+  cursor: pointer;
+  margin: 0;
+  display: block;
+}
+.zoomdiv {
+  z-index: 100;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 350px;
+  height: 350px;
+  background: #fff;
+  border: 1px solid #ccc;
+  display: none;
+  text-align: center;
+  overflow: hidden;
+}
+.jqZoomPup {
+  z-index: 10;
+  visibility: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 20px;
+  height: 20px;
+  border: 1px solid #aaa;
+  background: #fff;
+  opacity: 0.5;
+}
+.spec-preview {
+  width: 410px;
+  height: 410px;
+  border: 1px solid #dfdfdf;
+}
+.spec-scroll {
+  clear: both;
+  margin-top: 5px;
+  width: 410px;
+  overflow: hidden;
+}
+.spec-scroll .prev {
+  float: left;
+  margin-right: 4px;
+}
+.spec-scroll .next {
+  float: right;
+}
+.spec-scroll .items {
+  float: left;
+  position: relative;
+  width: 380px;
+  height: 56px;
+  overflow: hidden;
+}
+.spec-scroll .items ul {
+  position: absolute;
+  width: 9999px;
+  height: 56px;
+  margin: 0;
+  padding: 0;
+}
+.spec-scroll .items ul li {
+  float: left;
+  width: 75px;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+.spec-scroll .items ul li img {
+  border: 1px solid #ccc;
+  padding: 2px;
+  width: 50px;
+  height: 50px;
+  display: block;
+}
+.spec-scroll .items ul li img:hover {
+  border: 2px solid #f60;
+  padding: 1px;
+}
+.spec-scroll .prev,
+.spec-scroll .next {
+  display: block;
+  font-family: "宋体";
+  text-align: center;
+  width: 10px;
+  height: 54px;
+  line-height: 54px;
+  border: 1px solid #ccc;
+  background: #ebebeb;
+  cursor: pointer;
+  text-decoration: none;
+}
 
 </style>

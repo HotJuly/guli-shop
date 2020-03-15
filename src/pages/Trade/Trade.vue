@@ -142,199 +142,237 @@ export default {
 }
 </script>
 
-<style lang="stylus" scoped>
-.checkout 
-  margin 20px 0
-  h5 
-    font-weight 700
-    margin 0
-.hr 
-  height 1px
-  background-color #ddd
-a 
-  color #666
-.top 
-  background-color #f1f1f1
-.logoArea 
-  overflow hidden
-  position relative
-.logo 
-  background url(./img/icons.png) no-repeat
-  background-position -370px 5px
-  width 177px
-  height 75px
-  .title 
-    font 19px "微软雅黑"
-    position absolute
-    top 24px
-    left 190px
-.search 
-  position absolute
-  right 0
-  top 22px
-  font-size 16px
-  .btn-danger 
-    font-size 16px
-.checkout-steps 
-  border 1px solid #ddd
-  padding 25px
-  font-family "微软雅黑"
-.step-tit 
-  line-height 36px
-  margin 15px 0
-  h5 
-    span 
-      float right
-      a 
-        color #555
-        cursor pointer
-        text-decoration none
-        &:hover 
-          color red
-.step-cont 
-  margin 0 10px 0 20px
-  ul 
-    li 
-      list-style-type none
-      overflow hidden
-  .con 
-    float left
-    padding 0
-    margin 5px 0
-  li 
-    &.selected 
-      border 1px solid #e1251b
-      span 
-        width 13px
-        height 13px
-        display none
-        position absolute
-        right 0
-        _right -1px
-        bottom 0
-        _bottom -1px
-        overflow hidden
-        background url(./img/choosed.png) no-repeat
-        display block
-.seven 
-  color #c81623
-  margin-top 20px
-.price 
-  font 14px "微软雅黑"
-  font-weight 700
-  color #e12228
-ul 
-  &.addr-detail 
-    li 
-      width 99%
-      margin 10px 0
-  &.payType 
-    li 
-      position relative
-      display inline-block
-      padding 5px 20px
-      border 1px solid #ddd
-      *display inline
-      _zoom 1
-      *margin 5px 10px
-      cursor pointer
-  &.send-detail 
-    li 
-      margin-top 10px
-      line-height 30px
-.recommendAddr 
-  margin-top 10px
-.addr-item 
-  .name 
-    width 100px
-    text-align center
-    border 1px solid #ddd
-    a 
-      display block
-      padding 5px 0
-      position relative
-      outline 0
-      text-decoration none
-      color inherit
-      span 
-        width 13px
-        height 13px
-        display none
-        position absolute
-        right 0
-        _right -1px
-        bottom 0
-        _bottom -1px
-        overflow hidden
-        background url(./img/choosed.png) no-repeat
-    &.selected 
-      border 1px solid #e1251b
-      span 
-        display block
-  .address 
-    line-height 30px
-    margin-left 10px
-    padding-left 5px
-    width 55%
-    &:hover 
-      cursor pointer
-    .edittext 
-      padding-left 15px
-      visibility hidden
-    .base 
-      padding 4px
-      margin-left 10px
-      background-color #878787
-      color #fff
-.addressInfo 
-  .sui-modal 
-    width 565px
-.address-hover 
-  background-color #ddd
-  .edittext 
-    visibility visible !important
-.payshipInfo 
-  span 
-    font-weight 700
+<style scoped>
+.checkout {
+  margin: 20px 0;
+}
+.checkout h5 {
+  font-weight: 700;
+  margin: 0;
+}
+.hr {
+  height: 1px;
+  background-color: #ddd;
+}
+a {
+  color: #666;
+}
+.top {
+  background-color: #f1f1f1;
+}
+.logoArea {
+  overflow: hidden;
+  position: relative;
+}
+.logo {
+  background: url("./img/icons.png") no-repeat;
+  background-position: -370px 5px;
+  width: 177px;
+  height: 75px;
+}
+.logo .title {
+  font: 19px "微软雅黑";
+  position: absolute;
+  top: 24px;
+  left: 190px;
+}
+.search {
+  position: absolute;
+  right: 0;
+  top: 22px;
+  font-size: 16px;
+}
+.search .btn-danger {
+  font-size: 16px;
+}
+.checkout-steps {
+  border: 1px solid #ddd;
+  padding: 25px;
+  font-family: "微软雅黑";
+}
+.step-tit {
+  line-height: 36px;
+  margin: 15px 0;
+}
+.step-tit h5 span {
+  float: right;
+}
+.step-tit h5 span a {
+  color: #555;
+  cursor: pointer;
+  text-decoration: none;
+}
+.step-tit h5 span a:hover {
+  color: #f00;
+}
+.step-cont {
+  margin: 0 10px 0 20px;
+}
+.step-cont ul li {
+  list-style-type: none;
+  overflow: hidden;
+}
+.step-cont .con {
+  float: left;
+  padding: 0;
+  margin: 5px 0;
+}
+.step-cont li.selected {
+  border: 1px solid #e1251b;
+}
+.step-cont li.selected span {
+  width: 13px;
+  height: 13px;
+  display: none;
+  position: absolute;
+  right: 0;
+  _right: -1px;
+  bottom: 0;
+  _bottom: -1px;
+  overflow: hidden;
+  background: url("./img/choosed.png") no-repeat;
+  display: block;
+}
+.seven {
+  color: #c81623;
+  margin-top: 20px;
+}
+.price {
+  font: 14px "微软雅黑";
+  font-weight: 700;
+  color: #e12228;
+}
+ul.addr-detail li {
+  width: 99%;
+  margin: 10px 0;
+}
+ul.payType li {
+  position: relative;
+  display: inline-block;
+  padding: 5px 20px;
+  border: 1px solid #ddd;
+  *display: inline;
+  _zoom: 1;
+  *margin: 5px 10px;
+  cursor: pointer;
+}
+ul.send-detail li {
+  margin-top: 10px;
+  line-height: 30px;
+}
+.recommendAddr {
+  margin-top: 10px;
+}
+.addr-item .name {
+  width: 100px;
+  text-align: center;
+  border: 1px solid #ddd;
+}
+.addr-item .name a {
+  display: block;
+  padding: 5px 0;
+  position: relative;
+  outline: 0;
+  text-decoration: none;
+  color: inherit;
+}
+.addr-item .name a span {
+  width: 13px;
+  height: 13px;
+  display: none;
+  position: absolute;
+  right: 0;
+  _right: -1px;
+  bottom: 0;
+  _bottom: -1px;
+  overflow: hidden;
+  background: url("./img/choosed.png") no-repeat;
+}
+.addr-item .name.selected {
+  border: 1px solid #e1251b;
+}
+.addr-item .name.selected span {
+  display: block;
+}
+.addr-item .address {
+  line-height: 30px;
+  margin-left: 10px;
+  padding-left: 5px;
+  width: 55%;
+}
+.addr-item .address:hover {
+  cursor: pointer;
+}
+.addr-item .address .edittext {
+  padding-left: 15px;
+  visibility: hidden;
+}
+.addr-item .address .base {
+  padding: 4px;
+  margin-left: 10px;
+  background-color: #878787;
+  color: #fff;
+}
+.addressInfo .sui-modal {
+  width: 565px;
+}
+.address-hover {
+  background-color: #ddd;
+}
+.address-hover .edittext {
+  visibility: visible !important;
+}
+.payshipInfo span {
+  font-weight: 700;
+}
 .num,
-.exit 
-  text-align center
-.order-summary 
-  overflow hidden
-  padding-right 20px
+.exit {
+  text-align: center;
+}
+.order-summary {
+  overflow: hidden;
+  padding-right: 20px;
+}
 .list,
-.trade 
-  line-height 26px
-.list 
-  span 
-    float left
-    width 160px
-  em 
-    font-family "微软雅黑"
-.trade 
-  padding 10px
-  margin 10px 0
-  text-align right
-  background-color #f4f4f4
-  border 1px solid #ddd
-  .fc-receiverInfo 
-    color #999
-.submit 
-  .btn-xlarge 
-    padding 15px 45px
-    float right
-    margin 0 0 10px
-    font 18px "微软雅黑"
-    font-weight 700
-    border-radius 0
-    background-color #e1251b
-    border 1px solid #e1251b
-.number 
-  color red
-.payType 
-  margin-bottom 10px
-textarea 
-  &:focus 
-    outline none
+.trade {
+  line-height: 26px;
+}
+.list span {
+  float: left;
+  width: 160px;
+}
+.list em {
+  font-family: "微软雅黑";
+}
+.trade {
+  padding: 10px;
+  margin: 10px 0;
+  text-align: right;
+  background-color: #f4f4f4;
+  border: 1px solid #ddd;
+}
+.trade .fc-receiverInfo {
+  color: #999;
+}
+.submit .btn-xlarge {
+  padding: 15px 45px;
+  float: right;
+  margin: 0 0 10px;
+  font: 18px "微软雅黑";
+  font-weight: 700;
+  border-radius: 0;
+  background-color: #e1251b;
+  border: 1px solid #e1251b;
+}
+.number {
+  color: #f00;
+}
+.payType {
+  margin-bottom: 10px;
+}
+textarea:focus {
+  outline: none;
+}
+
 
 </style>

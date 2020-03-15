@@ -117,67 +117,77 @@ export default {
 }
 </script>
 
-<style lang="stylus" scoped>
-.py-container 
-  .title 
-    overflow hidden
-    margin-top 15px
-ul 
-  &.jd-list 
-    padding 15px 0
-    overflow hidden
-    li 
-      list-style-type none
-      float left
-      width 40%
-      margin 0 10px
-      border-bottom 1px solid #e4e4e4
-      text-align center
-      line-height 26px
-.blockgary 
-  background #f7f7f7
-.floors 
-  h3 
-    color #c81623
-  .fr 
-    ul 
-      li 
-        margin-left 0
-        a 
-          padding 0
-          &:after 
-            content "|"
-            padding 0 10px
-        &:last-child 
-          a 
-            &:after 
-              content ""
-    .sui-nav 
-      margin 10px 0 0
-      display inline-block
-  .sui-nav 
-    &.nav-tabs 
-      border-bottom 0
-      & > .active 
-        & > a 
-          font-weight 400
-          color #e1251b
-          border 0
-          padding-top 1px
-.floor 
-  .floor-content 
-    border-top 2px solid #c81623
-    border-bottom 1px solid #e4e4e4
-ul 
-  &.jd-list 
-    padding 15px 0
-    overflow hidden
-    li 
-      list-style-type none
-      float left
-      width 40%
-      margin 0 10px
-      border-bottom 1px solid #e4e4e4
-      text-align center
-      line-height 26px
+<style scoped>
+img:hover {
+  transform-origin: center center;
+  transform: scale(1.1);
+  transition: all 600ms;
+}
+.py-container .title {
+  overflow: hidden;
+  margin-top: 15px;
+}
+ul.jd-list {
+  padding: 15px 0;
+  overflow: hidden;
+}
+ul.jd-list li {
+  list-style-type: none;
+  float: left;
+  width: 40%;
+  margin: 0 10px;
+  border-bottom: 1px solid #e4e4e4;
+  text-align: center;
+  line-height: 26px;
+}
+.blockgary {
+  background: #f7f7f7;
+}
+.floors h3 {
+  color: #c81623;
+}
+.floors .fr ul li {
+  margin-left: 0;
+}
+.floors .fr ul li a {
+  padding: 0;
+}
+.floors .fr ul li a:after {
+  content: "|";
+  padding: 0 10px;
+}
+.floors .fr ul li:last-child a:after {
+  content: "";
+}
+.floors .fr .sui-nav {
+  margin: 10px 0 0;
+  display: inline-block;
+}
+.floors .sui-nav.nav-tabs {
+  border-bottom: 0;
+}
+.floors .sui-nav.nav-tabs > .active > a {
+  font-weight: 400;
+  color: #e1251b;
+  border: 0;
+  padding-top: 1px;
+}
+.floor .floor-content {
+  border-top: 2px solid #c81623;
+  border-bottom: 1px solid #e4e4e4;
+}
+ul.jd-list {
+  padding: 15px 0;
+  overflow: hidden;
+}
+ul.jd-list li {
+  list-style-type: none;
+  float: left;
+  width: 40%;
+  margin: 0 10px;
+  border-bottom: 1px solid #e4e4e4;
+  text-align: center;
+  line-height: 26px;
+}
+
 </style>

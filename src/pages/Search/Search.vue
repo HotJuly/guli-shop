@@ -285,92 +285,108 @@ export default {
 }
 </script>
 
-<style lang="stylus" scoped>
-.main 
-  margin 10px 0
-a 
-  color #666
+<style scoped>
+.main {
+  margin: 10px 0;
+}
+a {
+  color: #666;
+}
 em,
-i 
-  font-style normal
+i {
+  font-style: normal;
+}
 .sui-btn.btn-bordered.btn-danger:hover,
 .sui-btn.btn-bordered.btn-danger:focus,
 .operate .sui-btn.btn-bordered.btn-danger:active,
-.operate .sui-btn.btn-bordered.btn-danger.active 
-  border 1px solid #e1251b
-  background-color #e1251b
-.typeNav 
-  border-bottom 2px solid #e1251b
-.filter 
-  background #f1f1f1
-
+.operate .sui-btn.btn-bordered.btn-danger.active {
+  border: 1px solid #e1251b;
+  background-color: #e1251b;
+}
+.typeNav {
+  border-bottom: 2px solid #e1251b;
+}
+.filter {
+  background: #f1f1f1;
+}
 .sui-pagination ul > li > a:hover,
-.sui-pagination ul > li > a:focus 
-  border 1px solid #e1251b
-  background #e1251b
-.page 
-  width 733px
-  height 66px
-  overflow hidden
-.sui-pagination 
-  div 
-    float right
-    width 241px
-    display inline-block
-    *display inline
-    *zoom 1
-  ul 
-    display inline-block
-    *display inline
-    *zoom 1
-    width 490px
-    float left
-    & > .active 
-      & > a 
-        background-color #fff
-        color #e1251b
-        border-color #fff
-        cursor default
-        &:hover 
-          background #ccc
-          border 1px solid #ddd
-    & > li 
-      display inline-block
-      *display inline
-      *zoom 1
-      & > a 
-        &:hover 
-          background #ccc
-          border 1px solid #ddd
+.sui-pagination ul > li > a:focus {
+  border: 1px solid #e1251b;
+  background: #e1251b;
+}
+.page {
+  width: 733px;
+  height: 66px;
+  overflow: hidden;
+}
+.sui-pagination div {
+  float: right;
+  width: 241px;
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+}
+.sui-pagination ul {
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+  width: 490px;
+  float: left;
+}
+.sui-pagination ul > .active > a {
+  background-color: #fff;
+  color: #e1251b;
+  border-color: #fff;
+  cursor: default;
+}
+.sui-pagination ul > .active > a:hover {
+  background: #ccc;
+  border: 1px solid #ddd;
+}
+.sui-pagination ul > li {
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+}
+.sui-pagination ul > li > a:hover {
+  background: #ccc;
+  border: 1px solid #ddd;
+}
 .pagination-large ul > li > a,
-.pagination-large ul > li > span 
-  padding 9px 18px
-  color #333
+.pagination-large ul > li > span {
+  padding: 9px 18px;
+  color: #333;
+}
 .sui-pagination ul > .dotted > span,
-.sui-pagination ul > .dotted > a 
-  border 0
-.pagination-large 
-  div 
-    .page-num 
-      padding 9px 18px
-      & + . 
-        padding 7px 16px
-        color #666
-        background-color #f6f6f6
-        border 1px solid #ddd
-.hot-sale 
-  .hot-list 
-    padding 15px
-  .title 
-    border-bottom 1px solid #ddd
-    background #f1f1f1
-    color #333
-    margin 0
-    padding 5px 0 5px 15px
-.sort 
-  position absolute
-  display none
-.el-pagination
-    width 550px
-    margin 0 auto
+.sui-pagination ul > .dotted > a {
+  border: 0;
+}
+.pagination-large div .page-num {
+  padding: 9px 18px;
+}
+.pagination-large div .page-num + . {
+  padding: 7px 16px;
+  color: #666;
+  background-color: #f6f6f6;
+  border: 1px solid #ddd;
+}
+.hot-sale .hot-list {
+  padding: 15px;
+}
+.hot-sale .title {
+  border-bottom: 1px solid #ddd;
+  background: #f1f1f1;
+  color: #333;
+  margin: 0;
+  padding: 5px 0 5px 15px;
+}
+.sort {
+  position: absolute;
+  display: none;
+}
+.el-pagination {
+  width: 550px;
+  margin: 0 auto;
+}
+
 </style>

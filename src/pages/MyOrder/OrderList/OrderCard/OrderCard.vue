@@ -53,9 +53,9 @@ export default {
 }
 </script>
 
-<style lang="stylus" scoped>
-.typographic
-    img
-        width 82px
-        height 82px
+<style scoped>
+.typographic img {
+  width: 82px;
+  height: 82px;
+}
 </style>

@@ -103,8 +103,14 @@ export default {
 }
 </script>
 
-<style lang="stylus" scoped>
-.like 
-  .Favourate 
-    border 1px solid #e4e4e4
+<style scoped>
+img:hover {
+  transform-origin: center center;
+  transform: scale(1.1);
+  transition: all 600ms;
+}
+.like .Favourate {
+  border: 1px solid #e4e4e4;
+}
+
 </style>
