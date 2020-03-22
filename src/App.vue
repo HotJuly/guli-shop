@@ -1,14 +1,16 @@
 <template>
   <div id="app">
     <Header/>
+    
     <router-view></router-view>
+
     <Footer v-show="$route.meta.isShowFooter"/>
   </div>
 </template>
 
 <script>
-import Header from './components/Header/Header'
-import Footer from './components/Footer/Footer'
+import Header from '@/components/Header'
+import Footer from '@/components/Footer'
 export default {
   name: 'App',
   components:{
@@ -16,11 +18,7 @@ export default {
     Footer
   },
   mounted(){
-    let userInfo=window.localStorage.getItem('token');
-    if(userInfo){
-      userInfo=JSON.parse(userInfo);
-      this.$store.dispatch('autoLogin',userInfo)
-    }
+    this.$store.dispatch('autoLogin')
   }
 }
 </script>

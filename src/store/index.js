@@ -9,9 +9,9 @@ import modules from './modules'
 Vue.use(Vuex)
 
 export default new Vuex.Store({
-    state,
-    actions,
-    mutations,
-    getters,
-    modules
+  modules,
+  state,
+  actions,
+  mutations,
+  getters,
 })

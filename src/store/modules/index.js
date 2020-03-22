@@ -1,18 +1,18 @@
-import Index from './Index/index'
-import Detail from './Detail'
-import Search from './Search'
-import Login from './Login'
-import ShopCart from './ShopCart'
-import Trade from './Trade'
-import Pay from './Pay'
-import MyOrder from './MyOrder'
+import home from './home'
+import detail from './detail'
+import search from './search'
+import login from './login'
+import shopCart from './shopCart'
+import trade from './trade'
+import pay from './pay'
+import myOrder from './myOrder'
 export default{
-    Index,
-    Detail,
-    Search,
-    Login,
-    ShopCart,
-    Trade,
-    Pay,
-    MyOrder
+  home,
+  detail,
+  search,
+  login,
+  shopCart,
+  trade,
+  pay,
+  myOrder
 }

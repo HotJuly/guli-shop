@@ -1,3 +1,3 @@
 export default{
-    msg:"Common"
+    // msg:"Common"
 }

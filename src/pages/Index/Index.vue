@@ -1,257 +1,223 @@
 <template>
-    <div id="index">
-        <!-- 商品分类导航 -->
-        <TypeNav/>
-        <!--列表-->
-        <div class="py-container">
-            <div class="yui3-g SortList">
-                <div class="yui3-u Center banerArea">
-                    <!--banner轮播-->
-                    <div id="myCarousel" data-ride="carousel" data-interval="4000" class="sui-carousel slide">
-                        <ol class="carousel-indicators">
-                            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-                            <li data-target="#myCarousel" data-slide-to="1"></li>
-                            <li data-target="#myCarousel" data-slide-to="2"></li>
-                        </ol>
-                        <div class="carousel-inner">
-                            <div class="active item">
-                                <a href="http://baidu2.wypxj.com/">
-                                    <img src="./img/banner3.jpg" />
-                                </a>
-                            </div>
-                            <div class="item">
-                                <a href="http://baidu2.wypxj.com/">
-                                    <img src="./img/banner2.jpg" />
-                                </a>
-                            </div>
-                            <div class="item">
-                                <a href="http://baidu2.wypxj.com/">
-                                    <img src="./img/banner3.jpg" />
-                                </a>
+  <div>
+    <!-- 商品分类导航 -->
+    <TypeNav/>
 
-                            </div>
-                        </div>
-                        <a href="#myCarousel" data-slide="prev" class="carousel-control left">‹</a>
-                        <a href="#myCarousel" data-slide="next" class="carousel-control right">›</a>
-                    </div>
-                </div>
-                <div class="yui3-u Right">
-                    <div class="news">
-                        <h4>
-                            <em class="fl">尚品汇快报</em>
-                            <span class="fr tip">更多 ></span>
-                        </h4>
-                        <div class="clearix"></div>
-                        <ul class="news-list unstyled">
-                            <li>
-                                <span class="bold">[特惠]</span>备战开学季 全民半价购数码
-                            </li>
-                            <li>
-                                <span class="bold">[公告]</span>备战开学季 全民半价购数码
-                            </li>
-                            <li>
-                                <span class="bold">[特惠]</span>备战开学季 全民半价购数码
-                            </li>
-                            <li>
-                                <span class="bold">[公告]</span>备战开学季 全民半价购数码
-                            </li>
-                            <li>
-                                <span class="bold">[特惠]</span>备战开学季 全民半价购数码
-                            </li>
-                        </ul>
-                    </div>
-                    <ul class="yui3-g Lifeservice">
-                        <li class="yui3-u-1-4 life-item tab-item">
-                            <i class="list-item list-item-1"></i>
-                            <span class="service-intro">话费</span>
-                        </li>
-                        <li class="yui3-u-1-4 life-item tab-item">
-                            <i class="list-item list-item-2"></i>
-                            <span class="service-intro">机票</span>
-                        </li>
-                        <li class="yui3-u-1-4 life-item tab-item">
-                            <i class="list-item list-item-3"></i>
-                            <span class="service-intro">电影票</span>
-                        </li>
-                        <li class="yui3-u-1-4 life-item tab-item">
-                            <i class="list-item list-item-4"></i>
-                            <span class="service-intro">游戏</span>
-                        </li>
-                        <li class="yui3-u-1-4 life-item notab-item">
-                            <i class="list-item list-item-5"></i>
-                            <span class="service-intro">彩票</span>
-                        </li>
-                        <li class="yui3-u-1-4 life-item notab-item">
-                            <i class="list-item list-item-6"></i>
-                            <span class="service-intro">加油站</span>
-                        </li>
-                        <li class="yui3-u-1-4 life-item notab-item">
-                            <i class="list-item list-item-7"></i>
-                            <span class="service-intro">酒店</span>
-                        </li>
-                        <li class="yui3-u-1-4 life-item notab-item">
-                            <i class="list-item list-item-8"></i>
-                            <span class="service-intro">火车票</span>
-                        </li>
-                        <li class="yui3-u-1-4 life-item  notab-item">
-                            <i class="list-item list-item-9"></i>
-                            <span class="service-intro">众筹</span>
-                        </li>
-                        <li class="yui3-u-1-4 life-item notab-item">
-                            <i class="list-item list-item-10"></i>
-                            <span class="service-intro">理财</span>
-                        </li>
-                        <li class="yui3-u-1-4 life-item notab-item">
-                            <i class="list-item list-item-11"></i>
-                            <span class="service-intro">礼品卡</span>
-                        </li>
-                        <li class="yui3-u-1-4 life-item notab-item">
-                            <i class="list-item list-item-12"></i>
-                            <span class="service-intro">白条</span>
-                        </li>
-                    </ul>
-                    <div class="life-item-content">
-                        <div class="life-detail">
-                            <i class="close">关闭</i>
-                            <p>话费充值</p>
-                            <form action="" class="sui-form form-horizontal">
-                                号码：
-                                <input type="text" id="inputphoneNumber" placeholder="输入你的号码" />
-                            </form>
-                            <button class="sui-btn btn-danger">快速充值</button>
-                        </div>
-                        <div class="life-detail">
-                            <i class="close">关闭</i> 机票
-                        </div>
-                        <div class="life-detail">
-                            <i class="close">关闭</i> 电影票
-                        </div>
-                        <div class="life-detail">
-                            <i class="close">关闭</i> 游戏
-                        </div>
-                    </div>
-                    <div class="ads">
-                        <img src="./img/ad1.png" />
-                    </div>
-                </div>
-            </div>
+    <!--列表-->
+    <div class="py-container">
+      <div class="yui3-g SortList">
+        <div class="yui3-u Center banerArea">
+          <Carousel width="721" height="455" :carouselList="carouselList" name="brandCarousel" />
         </div>
-        <!--推荐-->
-        <div class="show">
-            <div class="py-container">
-                <ul class="yui3-g Recommend">
-                    <li class="yui3-u-1-6  clock">
-                        <div class="time">
-                            <img src="./img/clock.png" />
-                            <h3>今日推荐</h3>
-                        </div>
-                    </li>
-                    <li class="yui3-u-5-24">
-                        <a href="list.html" target="_blank">
-                            <img src="./img/today01.png" />
-                        </a>
-                    </li>
-                    <li class="yui3-u-5-24">
-                        <img src="./img/today02.png" />
-                    </li>
-                    <li class="yui3-u-5-24">
-                        <img src="./img/today03.png" />
-                    </li>
-                    <li class="yui3-u-5-24">
-                        <img src="./img/today04.png" />
-                    </li>
-                </ul>
-            </div>
-        </div>
-        <!-- 商品排行 -->
-        <TabBox/>
-        <!-- 猜你喜欢 -->
-        <RecommendLike/>
-        <!--楼层-->
-        <IndexRecommend/>
-        <IndexRecommend/>
-        <!--商标-->
-        <div class="brand">
-            <div class="py-container">
-                <ul class="Brand-list blockgary">
-                    <li class="Brand-item">
-                        <img src="./img/brand_21.png" />
-                    </li>
-                    <li class="Brand-item">
-                        <img src="./img/brand_03.png" />
-                    </li>
-                    <li class="Brand-item">
-                        <img src="./img/brand_05.png" />
-                    </li>
-                    <li class="Brand-item">
-                        <img src="./img/brand_07.png" />
-                    </li>
-                    <li class="Brand-item">
-                        <img src="./img/brand_09.png" />
-                    </li>
-                    <li class="Brand-item">
-                        <img src="./img/brand_11.png" />
-                    </li>
-                    <li class="Brand-item">
-                        <img src="./img/brand_13.png" />
-                    </li>
-                    <li class="Brand-item">
-                        <img src="./img/brand_15.png" />
-                    </li>
-                    <li class="Brand-item">
-                        <img src="./img/brand_17.png" />
-                    </li>
-                    <li class="Brand-item">
-                        <img src="./img/brand_19.png" />
-                    </li>
-                </ul>
-            </div>
-        </div>
-        <ShopCartNav/>
-        <!--页面底部END-->
-        <!-- 楼层位置 -->
-        <!-- <div id="floor-index" class="floor-index">
-            <ul>
-                <li>
-                    <a class="num" href="javascript:;" style="display: none;">1F</a>
-                    <a class="word" href="javascript;;" style="display: block;">家用电器</a>
-                </li>
-                <li>
-                    <a class="num" href="javascript:;" style="display: none;">2F</a>
-                    <a class="word" href="javascript;;" style="display: block;">手机通讯</a>
-                </li>
-                <li>
-                    <a class="num" href="javascript:;" style="display: none;">3F</a>
-                    <a class="word" href="javascript;;" style="display: block;">电脑办公</a>
-                </li>
-                <li>
-                    <a class="num" href="javascript:;" style="display: none;">4F</a>
-                    <a class="word" href="javascript;;" style="display: block;">家居家具</a>
-                </li>
-                <li>
-                    <a class="num" href="javascript:;" style="display: none;">5F</a>
-                    <a class="word" href="javascript;;" style="display: block;">运动户外</a>
-                </li>
+        <div class="yui3-u Right">
+          <div class="news">
+            <h4>
+              <em class="fl">尚品汇快报</em>
+              <span class="fr tip">更多 ></span>
+            </h4>
+            <div class="clearix"></div>
+            <ul class="news-list unstyled">
+              <li>
+                <span class="bold">[特惠]</span>备战开学季 全民半价购数码
+              </li>
+              <li>
+                <span class="bold">[公告]</span>备战开学季 全民半价购数码
+              </li>
+              <li>
+                <span class="bold">[特惠]</span>备战开学季 全民半价购数码
+              </li>
+              <li>
+                <span class="bold">[公告]</span>备战开学季 全民半价购数码
+              </li>
+              <li>
+                <span class="bold">[特惠]</span>备战开学季 全民半价购数码
+              </li>
             </ul>
-        </div> -->
+          </div>
+          <ul class="yui3-g Lifeservice">
+            <li class="yui3-u-1-4 life-item tab-item">
+              <i class="list-item list-item-1"></i>
+              <span class="service-intro">话费</span>
+            </li>
+            <li class="yui3-u-1-4 life-item tab-item">
+              <i class="list-item list-item-2"></i>
+              <span class="service-intro">机票</span>
+            </li>
+            <li class="yui3-u-1-4 life-item tab-item">
+              <i class="list-item list-item-3"></i>
+              <span class="service-intro">电影票</span>
+            </li>
+            <li class="yui3-u-1-4 life-item tab-item">
+              <i class="list-item list-item-4"></i>
+              <span class="service-intro">游戏</span>
+            </li>
+            <li class="yui3-u-1-4 life-item notab-item">
+              <i class="list-item list-item-5"></i>
+              <span class="service-intro">彩票</span>
+            </li>
+            <li class="yui3-u-1-4 life-item notab-item">
+              <i class="list-item list-item-6"></i>
+              <span class="service-intro">加油站</span>
+            </li>
+            <li class="yui3-u-1-4 life-item notab-item">
+              <i class="list-item list-item-7"></i>
+              <span class="service-intro">酒店</span>
+            </li>
+            <li class="yui3-u-1-4 life-item notab-item">
+              <i class="list-item list-item-8"></i>
+              <span class="service-intro">火车票</span>
+            </li>
+            <li class="yui3-u-1-4 life-item  notab-item">
+              <i class="list-item list-item-9"></i>
+              <span class="service-intro">众筹</span>
+            </li>
+            <li class="yui3-u-1-4 life-item notab-item">
+              <i class="list-item list-item-10"></i>
+              <span class="service-intro">理财</span>
+            </li>
+            <li class="yui3-u-1-4 life-item notab-item">
+              <i class="list-item list-item-11"></i>
+              <span class="service-intro">礼品卡</span>
+            </li>
+            <li class="yui3-u-1-4 life-item notab-item">
+              <i class="list-item list-item-12"></i>
+              <span class="service-intro">白条</span>
+            </li>
+          </ul>
+          <div class="life-item-content">
+            <div class="life-detail">
+              <i class="close">关闭</i>
+              <p>话费充值</p>
+              <form action="" class="sui-form form-horizontal">
+                号码：
+                <input type="text" id="inputphoneNumber" placeholder="输入你的号码" />
+              </form>
+              <button class="sui-btn btn-danger">快速充值</button>
+            </div>
+            <div class="life-detail">
+              <i class="close">关闭</i> 机票
+            </div>
+            <div class="life-detail">
+              <i class="close">关闭</i> 电影票
+            </div>
+            <div class="life-detail">
+              <i class="close">关闭</i> 游戏
+            </div>
+          </div>
+          <div class="ads">
+            <img src="./img/ad1.png" />
+          </div>
+        </div>
+      </div>
     </div>
+
+    <!--推荐-->
+    <div class="show">
+      <div class="py-container">
+        <ul class="yui3-g Recommend">
+          <li class="yui3-u-1-6  clock">
+            <div class="time">
+              <img src="./img/clock.png" />
+              <h3>今日推荐</h3>
+            </div>
+          </li>
+          <li class="yui3-u-5-24">
+            <a href="list.html" target="_blank">
+              <img src="./img/today01.png" />
+            </a>
+          </li>
+          <li class="yui3-u-5-24">
+            <img src="./img/today02.png" />
+          </li>
+          <li class="yui3-u-5-24">
+            <img src="./img/today03.png" />
+          </li>
+          <li class="yui3-u-5-24">
+            <img src="./img/today04.png" />
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- 商品排行 -->
+    <TabBox />
+
+    <!--猜你喜欢-->
+    <RecommendLike />
+
+    <!--楼层-->
+    <IndexRecommend v-for="recommend in recommendList" :recommend="recommend" :key="recommend.id"/>
+
+    <!--商标-->
+    <div class="brand">
+      <div class="py-container">
+        <ul class="Brand-list blockgary">
+          <li class="Brand-item">
+            <img src="./img/brand_21.png" />
+          </li>
+          <li class="Brand-item">
+            <img src="./img/brand_03.png" />
+          </li>
+          <li class="Brand-item">
+            <img src="./img/brand_05.png" />
+          </li>
+          <li class="Brand-item">
+            <img src="./img/brand_07.png" />
+          </li>
+          <li class="Brand-item">
+            <img src="./img/brand_09.png" />
+          </li>
+          <li class="Brand-item">
+            <img src="./img/brand_11.png" />
+          </li>
+          <li class="Brand-item">
+            <img src="./img/brand_13.png" />
+          </li>
+          <li class="Brand-item">
+            <img src="./img/brand_15.png" />
+          </li>
+          <li class="Brand-item">
+            <img src="./img/brand_17.png" />
+          </li>
+          <li class="Brand-item">
+            <img src="./img/brand_19.png" />
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <ShopCartNav/>
+  </div>
 </template>
 
-<script>
+<script type="text/ecmascript-6">
+import {mapState} from 'vuex'
 import ShopCartNav from './ShopCartNav/ShopCartNav'
 import IndexRecommend from './IndexRecommend/IndexRecommend'
 import RecommendLike from './RecommendLike/RecommendLike'
 import TabBox from './TabBox/TabBox'
-import TypeNav from '../../components/TypeNav/TypeNav'
+import TypeNav from '@/components/TypeNav'
+import Carousel from '@/components/Carousel'
 export default {
-    name:"Index",
-    components:{
-        ShopCartNav,
-        IndexRecommend,
-        RecommendLike,
-        TabBox,
-        TypeNav
-    }
+  name:"Index",
+  components:{
+    ShopCartNav,
+    IndexRecommend,
+    RecommendLike,
+    TabBox,
+    TypeNav,
+    Carousel
+  },
+  computed:{
+    ...mapState({
+      carouselList:state=>state.home.carouselList,
+      recommendList:state=>state.home.recommendList
+    })
+  },
+  mounted(){
+    this.$store.dispatch('getCarouselList');
+    this.$store.dispatch('getRecommendList');
+  }
 }
 </script>
 
@@ -274,20 +240,11 @@ export default {
 .row-218 {
   width: 218px;
 }
-.row-218.split {
-  border: 1px solid #e4e4e4;
-  width: 218px;
-  border-bottom: 0;
-  border-top: 0;
-}
 a {
   color: #666;
 }
-a.carousel-control {
-  *font-size: 30px;
-  *padding-left: 3px;
-}
 img {
+  backface-visibility: hidden;
   -webkit-backface-visibility: hidden;
   -webkit-transition: opacity 0.3s ease-out;
   -moz-transition: opacity 0.3s ease-out;
@@ -311,36 +268,11 @@ img:hover {
   margin: -2px;
   position: relative;
 }
-.Interest .Interest-conver-split {
-  overflow: hidden;
-  border-right: 1px solid #e4e4e4;
-}
-.Interest .Interest-conver-split h5 {
-  text-align: center;
-  border-bottom: 1px dotted #e4e4e4;
-  padding: 5px;
-  font-weight: 700;
-  color: #000;
-}
-.Interest .x-line {
-  height: 1px;
-  background: #e4e4e4;
-  display: block;
-  top: 250px;
-  left: 405px;
-  position: absolute;
-  width: 630px;
-  z-index: 9999;
-}
 .Floor-1 {
   height: 360px;
 }
 em {
   font-style: normal;
-}
-.banerArea .sui-carousel {
-  padding: 5px;
-  margin-bottom: 0;
 }
 .news {
   border: 1px solid #e4e4e4;
@@ -366,16 +298,6 @@ em {
   overflow: hidden;
   position: relative;
   z-index: 2;
-  overflow: hidden;
-}
-.Lifeservice .life-item .list-item {
-  background-image: url("./img/icons.png");
-  width: 61px;
-  height: 40px;
-  display: block;
-  position: relative;
-  *zoom: 1;
-  _position: relative;
 }
 .SortList {
   margin-left: 210px;
@@ -388,6 +310,15 @@ em {
   text-align: center;
   position: relative;
   cursor: pointer;
+}
+.Lifeservice .life-item .list-item {
+  background-image: url(./img/icons.png);
+  width: 61px;
+  height: 40px;
+  display: block;
+  position: relative;
+  *zoom: 1;
+  _position: relative;
 }
 .service-intro {
   line-height: 22px;
@@ -455,36 +386,46 @@ em {
   border-radius: 0;
   background: #585757;
 }
+a.carousel-control {
+  *font-size: 30px;
+  *padding-left: 3px;
+}
+
 .title .tip {
-  background-image: url("./img/icons.png");
+  background-image: url(./img/icons.png);
   width: 66px;
   height: 25px;
   background-position: 182px -104px;
   line-height: 30px;
 }
-.title ul li img {
-  width: 142px;
-  height: 142px;
-  padding: 0;
+
+.blockgary {
+  background: #f7f7f7;
 }
-.title ul li .like-text {
-  padding: 0;
-  width: 142px;
+.Interest .Interest-conver-split {
+  overflow: hidden;
   border-right: 1px solid #e4e4e4;
 }
-.title ul li:last-child .like-text {
-  border-right: 0;
+.Interest .Interest-conver-split h5 {
+  text-align: center;
+  border-bottom: 1px dotted #e4e4e4;
+  padding: 5px;
+  font-weight: 700;
+  color: #000;
 }
-.like-text h3 {
-  color: #df3033;
+.Interest .x-line {
+  height: 1px;
+  background: #e4e4e4;
+  display: block;
+  top: 250px;
+  left: 405px;
+  position: absolute;
+  width: 630px;
+  z-index: 9999;
 }
-.like-text p {
-  margin-bottom: 0;
-}
-.like-text.brand-list li {
-  height: 48px;
-  line-height: 58px;
-}
+
+
+
 .brandArea {
   position: relative;
 }
@@ -518,6 +459,12 @@ em {
   height: 1px;
   top: 180px;
 }
+.row-218.split {
+  border: 1px solid #e4e4e4;
+  width: 218px;
+  border-bottom: 0;
+  border-top: 0;
+}
 .brand .Brand-list {
   overflow: hidden;
   padding: 15px 0;
@@ -530,35 +477,13 @@ em {
 .brand ul li:first-child img {
   border-left: 0;
 }
-#floor-index {
-  position: fixed;
-  left: 280px;
-  top: 120px;
-  display: none;
+ul.brand-list li {
+  height: 48px;
+  line-height: 58px;
 }
-#floor-index a {
-  text-decoration: none;
-}
-#floor-index ul li {
-  list-style-type: none;
-  text-decoration: none;
-  width: 60px;
-  height: 30px;
-  line-height: 30px;
-  text-align: center;
-  border-bottom: 1px solid #ddd;
-}
-#floor-index ul li:last-child {
-  border-bottom: 1px solid #ddd;
-}
-#floor-index ul li .num {
-  color: #666;
-  background: #f7f7f7;
-}
-#floor-index ul li .word {
-  display: none;
-  background: #90cb1c;
-  color: #fff;
+
+.Lifeservice {
+  overflow: hidden;
 }
 .tab-item {
   cursor: pointer;
@@ -592,18 +517,20 @@ em {
 #picLBxxl li {
   height: 250px;
 }
-.picLB {
-  overflow: hidden;
-  zoom: 1;
-  padding: 0 10px;
-}
 .picLB li {
   height: 250px;
   margin: 0 -1px;
   overflow: hidden;
   background: #fff;
   position: relative;
-  float: left;
+}
+.picLB {
+  overflow: hidden;
+  zoom: 1;
+  padding: 0 10px;
+}
+.picLB li {
+  /* float: left; */
   display: inline;
 }
 .picDl {
@@ -617,12 +544,16 @@ em {
   margin: 0;
 }
 .picDl dd {
-  float: left;
+  /* float: left; */
   display: inline;
   overflow: hidden;
+}
+
+.sort {
+  display: block !important;
+  float: left;
 }
 .item-list .subitem dl.fore {
   border-top: 0;
 }
-
 </style>
